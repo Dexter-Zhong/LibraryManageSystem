@@ -1,5 +1,6 @@
   LMS.Form1.resources - Embedded, ContainedInManifestFile, 
   LMS.LoginForm.resources - Embedded, ContainedInManifestFile, 
+  LMS.RegisterForm.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly LMS, Version=1.0.*, Culture=固定语言(固定国家/地区): 
 	hash=SHA1, flags=PublicKey
@@ -15,9 +16,19 @@ Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
-Class LMS.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+Class LMS.RegisterForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class LMS.LoginForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String LoginState : Public, Static
+    System.String UserName : Public, Static
+    System.String account : Public, Static
+    System.String ID : Public, Static
+  Methods:
+    LogOut(): PrivateScope, Public, Static, HideBySig
+Class LMS.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

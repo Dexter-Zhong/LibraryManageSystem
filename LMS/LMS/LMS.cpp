@@ -13,7 +13,7 @@ int main(array<System::String ^> ^args)
 	Application::SetCompatibleTextRenderingDefault(false); 
 
 	// 创建主窗口并运行它
-	//Application::Run(gcnew Form1());
-	Application::Run(gcnew LoginForm());
+	Application::Run(gcnew Form1());
+	//Application::Run(gcnew LoginForm());
 	return 0;
 }
