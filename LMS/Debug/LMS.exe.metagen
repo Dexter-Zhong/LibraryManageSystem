@@ -54,3 +54,4 @@ Class LMS.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     System.String[] split : Public, Static
   Methods:
     data_receivce(): PrivateScope, Public, HideBySig
+    UpdateListview(DataTable): PrivateScope, Public, HideBySig

@@ -15,7 +15,9 @@ namespace LMS {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::Data::OleDb;
-	
+	using namespace System::Drawing::Printing;
+	using namespace System::Drawing::Drawing2D;
+
 
 	/// <summary>
 	/// Form1 摘要
@@ -118,6 +120,8 @@ namespace LMS {
 	private: System::Windows::Forms::Label^  label12;
 	private: System::Windows::Forms::ToolStripMenuItem^  添加管理员ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  关闭ToolStripMenuItem;
+	private: System::Drawing::Printing::PrintDocument^  printDocument1;
+	private: System::Windows::Forms::ListView^  listView1;
 
 	private: System::ComponentModel::IContainer^  components;
 
@@ -204,6 +208,8 @@ namespace LMS {
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->printDocument1 = (gcnew System::Drawing::Printing::PrintDocument());
+			this->listView1 = (gcnew System::Windows::Forms::ListView());
 			this->menuStrip1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
@@ -242,32 +248,34 @@ namespace LMS {
 			// 文件ToolStripMenuItem
 			// 
 			this->文件ToolStripMenuItem->Name = L"文件ToolStripMenuItem";
-			this->文件ToolStripMenuItem->Size = System::Drawing::Size(181, 30);
+			this->文件ToolStripMenuItem->Size = System::Drawing::Size(170, 30);
 			this->文件ToolStripMenuItem->Text = L"打开";
 			this->文件ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::文件ToolStripMenuItem_Click);
 			// 
 			// 保存ToolStripMenuItem
 			// 
 			this->保存ToolStripMenuItem->Name = L"保存ToolStripMenuItem";
-			this->保存ToolStripMenuItem->Size = System::Drawing::Size(181, 30);
+			this->保存ToolStripMenuItem->Size = System::Drawing::Size(170, 30);
 			this->保存ToolStripMenuItem->Text = L"保存";
 			// 
 			// 打印ToolStripMenuItem
 			// 
 			this->打印ToolStripMenuItem->Name = L"打印ToolStripMenuItem";
-			this->打印ToolStripMenuItem->Size = System::Drawing::Size(181, 30);
+			this->打印ToolStripMenuItem->Size = System::Drawing::Size(170, 30);
 			this->打印ToolStripMenuItem->Text = L"打印";
+			this->打印ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::打印ToolStripMenuItem_Click);
 			// 
 			// 打印预览ToolStripMenuItem
 			// 
 			this->打印预览ToolStripMenuItem->Name = L"打印预览ToolStripMenuItem";
-			this->打印预览ToolStripMenuItem->Size = System::Drawing::Size(181, 30);
+			this->打印预览ToolStripMenuItem->Size = System::Drawing::Size(170, 30);
 			this->打印预览ToolStripMenuItem->Text = L"打印预览";
+			this->打印预览ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::打印预览ToolStripMenuItem_Click);
 			// 
 			// 关闭ToolStripMenuItem
 			// 
 			this->关闭ToolStripMenuItem->Name = L"关闭ToolStripMenuItem";
-			this->关闭ToolStripMenuItem->Size = System::Drawing::Size(181, 30);
+			this->关闭ToolStripMenuItem->Size = System::Drawing::Size(170, 30);
 			this->关闭ToolStripMenuItem->Text = L"关闭";
 			this->关闭ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::关闭ToolStripMenuItem_Click);
 			// 
@@ -288,7 +296,7 @@ namespace LMS {
 			// 串口设置ToolStripMenuItem
 			// 
 			this->串口设置ToolStripMenuItem->Name = L"串口设置ToolStripMenuItem";
-			this->串口设置ToolStripMenuItem->Size = System::Drawing::Size(181, 30);
+			this->串口设置ToolStripMenuItem->Size = System::Drawing::Size(170, 30);
 			this->串口设置ToolStripMenuItem->Text = L"串口设置";
 			this->串口设置ToolStripMenuItem->DropDownItemClicked += gcnew System::Windows::Forms::ToolStripItemClickedEventHandler(this, &Form1::串口设置ToolStripMenuItem_DropDownItemClicked);
 			this->串口设置ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::串口设置ToolStripMenuItem_Click);
@@ -296,13 +304,13 @@ namespace LMS {
 			// 打开串口ToolStripMenuItem
 			// 
 			this->打开串口ToolStripMenuItem->Name = L"打开串口ToolStripMenuItem";
-			this->打开串口ToolStripMenuItem->Size = System::Drawing::Size(181, 30);
+			this->打开串口ToolStripMenuItem->Size = System::Drawing::Size(170, 30);
 			this->打开串口ToolStripMenuItem->Text = L"打开串口";
 			// 
 			// 关闭串口ToolStripMenuItem
 			// 
 			this->关闭串口ToolStripMenuItem->Name = L"关闭串口ToolStripMenuItem";
-			this->关闭串口ToolStripMenuItem->Size = System::Drawing::Size(181, 30);
+			this->关闭串口ToolStripMenuItem->Size = System::Drawing::Size(170, 30);
 			this->关闭串口ToolStripMenuItem->Text = L"关闭串口";
 			// 
 			// 用户ToolStripMenuItem
@@ -830,11 +838,25 @@ namespace LMS {
 			this->label12->TabIndex = 0;
 			this->label12->Text = L"ID";
 			// 
+			// printDocument1
+			// 
+			this->printDocument1->PrintPage += gcnew System::Drawing::Printing::PrintPageEventHandler(this, &Form1::printDocument1_PrintPage);
+			// 
+			// listView1
+			// 
+			this->listView1->Location = System::Drawing::Point(502, 74);
+			this->listView1->Name = L"listView1";
+			this->listView1->Size = System::Drawing::Size(121, 97);
+			this->listView1->TabIndex = 16;
+			this->listView1->UseCompatibleStateImageBehavior = false;
+			this->listView1->Visible = false;
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1500, 849);
+			this->Controls->Add(this->listView1);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->textBox7);
 			this->Controls->Add(this->textBox6);
@@ -943,6 +965,8 @@ private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e)
 	this->我的ToolStripMenuItem->Enabled=false;
 	this->添加管理员ToolStripMenuItem->Enabled = false;
 	this->打开串口ToolStripMenuItem->Enabled = false;
+	this->打印ToolStripMenuItem->Enabled = false;
+	this->打印预览ToolStripMenuItem->Enabled = false;
 }
 private: System::Void 注册ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	RegisterForm^aRegisterForm = gcnew RegisterForm;
@@ -1119,6 +1143,9 @@ private: System::Void 文件ToolStripMenuItem_Click(System::Object^  sender, Syste
 	//this->我的ToolStripMenuItem->Enabled = true;
 
 	this->打开串口ToolStripMenuItem->Enabled = true;
+	this->打印ToolStripMenuItem->Enabled = true;
+	this->打印预览ToolStripMenuItem->Enabled = true;
+
 	con1 = gcnew OleDbConnection(Connection::strConn);
 
 	OleDbConnection^ con1 = gcnew OleDbConnection(Connection::strConn);
@@ -1183,6 +1210,9 @@ private: System::Void comboBox1_SelectedIndexChanged(System::Object^  sender, Sy
 	this->dataGridView1->DataMember = "Test";	// 指定要打开的表
 
 	this->dataGridView1->AutoResizeColumn(5, DataGridViewAutoSizeColumnMode::AllCellsExceptHeader);
+
+	UpdateListview(theSet1->Tables["Test"]);
+
 	/* 直接使用表
 
 	DataTable^ table = gcnew DataTable;
@@ -1262,6 +1292,8 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 		this->dataGridView1->DataMember = "Test";	// 指定要打开的表
 
 		this->dataGridView1->AutoResizeColumn(5, DataGridViewAutoSizeColumnMode::AllCellsExceptHeader);
+
+		UpdateListview(theSet1->Tables["Test"]);
 	}
 
 	catch (Data::OleDb::OleDbException^ e)
@@ -1316,6 +1348,8 @@ private: System::Void button2_Click(System::Object^  sender, System::EventArgs^ 
 		this->dataGridView1->DataMember = "Test";	// 指定要打开的表
 
 		this->dataGridView1->AutoResizeColumn(5, DataGridViewAutoSizeColumnMode::AllCellsExceptHeader);
+
+		UpdateListview(theSet1->Tables["Test"]);
 
 	}
 
@@ -1387,6 +1421,8 @@ private: System::Void button4_Click(System::Object^  sender, System::EventArgs^ 
 		this->dataGridView1->DataMember = "Test";	// 指定要打开的表
 
 		this->dataGridView1->AutoResizeColumn(5, DataGridViewAutoSizeColumnMode::AllCellsExceptHeader);
+
+		UpdateListview(theSet1->Tables["Test"]);
 	}
 
 	catch (Data::OleDb::OleDbException^ e)
@@ -1450,6 +1486,8 @@ private: System::Void button7_Click(System::Object^  sender, System::EventArgs^ 
 
 				 this->dataGridView1->AutoResizeColumn(5, DataGridViewAutoSizeColumnMode::AllCellsExceptHeader);
 
+				 UpdateListview(theSet1->Tables["Test"]);
+
 				 LoginForm::borrowed++;
 
 				 String^ strCmd1 = String::Format("UPDATE 用户 SET 已借阅 = {1} WHERE  用户名= '{2}'", strTableName, LoginForm::borrowed, LoginForm::UserName);
@@ -1486,11 +1524,158 @@ private: System::Void 关闭ToolStripMenuItem_Click(System::Object^  sender, Syste
 	this->打开串口ToolStripMenuItem->Enabled = false;
 	this->comboBox1->Items->Clear();
 	this->comboBox1->Text = "";
+	this->打印ToolStripMenuItem->Enabled = false;
+	this->打印预览ToolStripMenuItem->Enabled = false;
 }
 private: System::Void 添加管理员ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	AddManageForm^ aAddManageForm = gcnew AddManageForm();
 	aAddManageForm->ShowDialog();
 }
+private: System::Void 打印ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	PrintDialog^ printDlg = gcnew PrintDialog();   		// 打印对话框
+
+	printDlg->Document = this->printDocument1;      	// 设置打印文档
+
+	if (printDlg->ShowDialog() == System::Windows::Forms::DialogResult::OK)
+
+		this->printDocument1->Print();             	 // 开始打印
+}
+private: System::Void 打印预览ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	PrintPreviewDialog^ previewDlg = gcnew PrintPreviewDialog(); //打印预览对话框
+
+	previewDlg->Document = this->printDocument1;
+
+	previewDlg->ShowDialog();
+}
+
+private: System::Void printDocument1_PrintPage(System::Object^  sender, System::Drawing::Printing::PrintPageEventArgs^  e) {
+	Graphics^ g = e->Graphics;
+
+	int left = e->MarginBounds.Left;                   // 左上角X位置
+
+	int top = e->MarginBounds.Top;                   // 左上角Y位置
+
+	int width = e->MarginBounds.Width;                 //有效区域宽度
+
+	int height = e->MarginBounds.Height;             // 有效区域高度
+
+	// 打印页头(宋体,26号)
+
+	Drawing::Font^ headerFont =
+
+		gcnew Drawing::Font(L"宋体", 26, FontStyle::Regular);
+
+	g->DrawString(this->comboBox1->Items[this->comboBox1->SelectedIndex]->ToString(), headerFont, Brushes::Black, left + 230, top);
+
+	// 打印标题(背景灰色,宋体,12号)
+
+	top += 60;
+
+	Drawing::Pen^  tablesPen = gcnew Drawing::Pen(Color::Black);
+
+//	g->DrawImage(gcnew Bitmap("..\\Debug\\1.jpg"), 650, -15, 160, top + 10);
+	g->DrawLine(tablesPen, left, top + 30, left + width, top + 30);
+
+	Drawing::Font^titlesFont = gcnew Drawing::Font(L"宋体", 12, FontStyle::Bold);
+
+	g->DrawString(L"ID", titlesFont, Brushes::Black, left + 40, top + 5);
+
+	g->DrawLine(tablesPen, left + 120, top, left + 120, top + 30);          //列分隔线
+
+	g->DrawString(L"书名", titlesFont, Brushes::Black, left + 150, top + 5);
+
+	g->DrawLine(tablesPen, left + 220, top, left + 220, top + 30);
+
+	g->DrawString(L"作者", titlesFont, Brushes::Black, left + 290, top + 5);
+
+	g->DrawLine(tablesPen, left + 340, top, left + 340, top + 30);
+
+	g->DrawString(L"出版社", titlesFont, Brushes::Black, left + 430, top + 5);
+	
+	g->DrawLine(tablesPen, left + 440, top, left + 440, top + 30);
+
+	g->DrawString(L"借阅者", titlesFont, Brushes::Black, left + 530, top + 5);
+
+	g->DrawLine(tablesPen, left + 540, top, left + 540, top + 30);
+
+	g->DrawString(L"上架时间", titlesFont, Brushes::Black, left + 730, top + 5);
+
+	//g->DrawLine(tablesPen, left + 430, top, left + 430, top + 30);
+
+	//g->DrawString(L"成绩3", titlesFont, Brushes::Black, left + 450, top + 5);
+
+	// 打印页表
+
+	top += 30, height -= 30;
+
+	Drawing::Font^ tablesFont =
+
+		gcnew Drawing::Font(L"宋体", 12, FontStyle::Regular);
+
+	for each(ListViewItem^ item in this->listView1->Items) {
+
+		g->DrawString(item->SubItems[0]->Text, tablesFont, Brushes::Black, left + 40, top + 5);      // 学号
+
+		g->DrawLine(tablesPen, left + 120, top, left + 120, top + 30);             //列分隔线
+
+		g->DrawString(item->SubItems[1]->Text, tablesFont, Brushes::Black, left + 150, top + 5);    // 姓名
+
+		g->DrawLine(tablesPen, left + 220, top, left + 220, top + 30);
+
+		g->DrawString(item->SubItems[2]->Text, tablesFont, Brushes::Black, left + 290, top + 5);    // 成绩1
+
+		g->DrawLine(tablesPen, left + 340, top, left + 440, top + 30);
+
+		g->DrawString(item->SubItems[3]->Text, tablesFont, Brushes::Black, left + 430, top + 5);    // 成绩2
+		
+		g->DrawLine(tablesPen, left + 440, top, left + 440, top + 30);
+
+		g->DrawString(item->SubItems[4]->Text, tablesFont, Brushes::Black, left + 530, top + 5);      // 学号
+
+		g->DrawLine(tablesPen, left + 540, top, left + 540, top + 30);
+
+		g->DrawString(item->SubItems[4]->Text, tablesFont, Brushes::Black, left + 730, top + 5);
+
+
+
+		// g->DrawLine(tablesPen, left + 620, top, left + 650, top + 30);
+
+		//g->DrawString(item->SubItems[4]->Text, tablesFont, Brushes::Black, left + 460, top + 5);    // 成绩3
+
+		//g->DrawLine(tablesPen, left, top + 30, left + width, top + 30);
+
+		top += 30, height -= 30;
+
+	}
+
+	e->HasMorePages = false;
+}
+
+public:void UpdateListview(DataTable^table)
+{
+	ListViewItem^ item;
+
+	for each (DataRow^ row in table->Rows)
+
+	{
+
+		if (row->RowState != DataRowState::Deleted)// 不能是已删除的行
+
+		{
+
+			item = gcnew ListViewItem(row[0]->ToString());
+
+			for (int i = 1; i<table->Columns->Count; i++)
+
+				item->SubItems->Add(row[i]->ToString());
+
+		}
+
+		listView1->Items->Add(item);
+
+	}
+}
+
 };
 }
 

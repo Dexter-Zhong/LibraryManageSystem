@@ -1,16 +1,29 @@
-﻿生成启动时间为 2018/12/21 19:38:50。
-     1>项目“C:\Users\99713\Documents\Visual Studio 2013\Projects\LibraryManageSystem\LMS\LMS\LMS.vcxproj”在节点 2 上(Build 个目标)。
+﻿生成启动时间为 2018/12/21 22:18:39。
+     1>项目“C:\Users\99713\Documents\GitHub\LibraryManageSystem\LMS\LMS\LMS.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\LMS.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib LMS.cpp
          LMS.cpp
-     1>c:\users\99713\documents\visual studio 2013\projects\librarymanagesystem\lms\lms\LoginForm.h(309): warning C4101: “strCmd2”: 未引用的局部变量
-     1>c:\users\99713\documents\visual studio 2013\projects\librarymanagesystem\lms\lms\LoginForm.h(309): warning C4101: “identity”: 未引用的局部变量
-     1>c:\users\99713\documents\visual studio 2013\projects\librarymanagesystem\lms\lms\SerialForm.h(231): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
-     1>c:\users\99713\documents\visual studio 2013\projects\librarymanagesystem\lms\lms\MessageForm.h(299): warning C4101: “e”: 未引用的局部变量
-     1>c:\users\99713\documents\visual studio 2013\projects\librarymanagesystem\lms\lms\MessageForm.h(346): warning C4101: “e”: 未引用的局部变量
-     1>c:\users\99713\documents\visual studio 2013\projects\librarymanagesystem\lms\lms\form1.h(1222): warning C4715: “LMS::Form1::CheckValid”: 不是所有的控件路径都返回值
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\LoginForm.h(309): warning C4101: “strCmd2”: 未引用的局部变量
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\LoginForm.h(309): warning C4101: “identity”: 未引用的局部变量
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\SerialForm.h(231): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\MessageForm.h(299): warning C4101: “e”: 未引用的局部变量
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\MessageForm.h(346): warning C4101: “e”: 未引用的局部变量
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1568): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1581): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1585): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1589): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1593): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1597): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1601): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1617): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1621): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1625): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1629): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1633): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1637): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\form1.h(1252): warning C4715: “LMS::Form1::CheckValid”: 不是所有的控件路径都返回值
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\99713\Documents\Visual Studio 2013\Projects\LibraryManageSystem\LMS\Debug\LMS.exe" /INCREMENTAL /NOLOGO user32.lib kernel32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /ASSEMBLYRESOURCE:Debug\LMS.AddManageForm.resources /ASSEMBLYRESOURCE:Debug\LMS.Form1.resources /ASSEMBLYRESOURCE:Debug\LMS.LoginForm.resources /ASSEMBLYRESOURCE:Debug\LMS.MessageForm.resources /ASSEMBLYRESOURCE:Debug\LMS.RegisterForm.resources /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\99713\Documents\Visual Studio 2013\Projects\LibraryManageSystem\LMS\Debug\LMS.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\99713\Documents\GitHub\LibraryManageSystem\LMS\Debug\LMS.exe" /INCREMENTAL /NOLOGO user32.lib kernel32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /ASSEMBLYRESOURCE:Debug\LMS.AddManageForm.resources /ASSEMBLYRESOURCE:Debug\LMS.Form1.resources /ASSEMBLYRESOURCE:Debug\LMS.LoginForm.resources /ASSEMBLYRESOURCE:Debug\LMS.MessageForm.resources /ASSEMBLYRESOURCE:Debug\LMS.RegisterForm.resources /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\99713\Documents\GitHub\LibraryManageSystem\LMS\Debug\LMS.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
          Debug\AddManageForm.obj
          Debug\AssemblyInfo.obj
          Debug\LMS.obj
@@ -20,9 +33,9 @@
          Debug\SerialForm.obj
          Debug\stdafx.obj
          "Debug\.NETFramework,Version=v4.5.AssemblyAttributes.obj"
-         LMS.vcxproj -> C:\Users\99713\Documents\Visual Studio 2013\Projects\LibraryManageSystem\LMS\Debug\LMS.exe
-     1>已完成生成项目“C:\Users\99713\Documents\Visual Studio 2013\Projects\LibraryManageSystem\LMS\LMS\LMS.vcxproj”(Build 个目标)的操作。
+         LMS.vcxproj -> C:\Users\99713\Documents\GitHub\LibraryManageSystem\LMS\Debug\LMS.exe
+     1>已完成生成项目“C:\Users\99713\Documents\GitHub\LibraryManageSystem\LMS\LMS\LMS.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:02.36
+已用时间 00:00:02.50
