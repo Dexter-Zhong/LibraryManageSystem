@@ -1,6 +1,11 @@
 #pragma once
 #include"RegisterForm.h"
 #include"LoginForm.h"
+#include "Windows.h"
+#include "SerialForm.h"
+#include "tchar.h"
+#include "MessageForm.h"
+#include"AddManageForm.h"
 namespace LMS {
 
 	using namespace System;
@@ -9,6 +14,8 @@ namespace LMS {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Data::OleDb;
+	
 
 	/// <summary>
 	/// Form1 摘要
@@ -72,6 +79,46 @@ namespace LMS {
 	private: System::Windows::Forms::ToolStripMenuItem^  打印预览ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripStatusLabel^  toolStripStatusLabel6;
 	private: System::Windows::Forms::ToolStripStatusLabel^  toolStripStatusLabel3;
+	private: System::Windows::Forms::ListBox^  listBox1;
+	private: System::Windows::Forms::ComboBox^  comboBox1;
+	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::DataGridView^  dataGridView1;
+	private: System::Windows::Forms::GroupBox^  groupBox1;
+	private: System::Windows::Forms::Button^  button3;
+	private: System::Windows::Forms::Button^  button2;
+	private: System::Windows::Forms::Button^  button1;
+	private: System::Windows::Forms::TextBox^  textBox4;
+	private: System::Windows::Forms::TextBox^  textBox3;
+	private: System::Windows::Forms::TextBox^  textBox2;
+
+	private: System::Windows::Forms::Label^  label5;
+	private: System::Windows::Forms::Label^  label4;
+	private: System::Windows::Forms::Label^  label3;
+	private: System::Windows::Forms::Label^  label2;
+	private: System::Windows::Forms::TextBox^  textBox1;
+	private: System::Windows::Forms::ToolStripMenuItem^  我的ToolStripMenuItem;
+	private: System::Windows::Forms::Button^  button4;
+	private: System::Windows::Forms::Label^  label6;
+	private: System::Windows::Forms::TextBox^  textBox5;
+	private: System::Windows::Forms::Label^  label7;
+	private: System::Windows::Forms::Label^  label8;
+	private: System::Windows::Forms::TextBox^  textBox6;
+	private: System::Windows::Forms::TextBox^  textBox7;
+	private: System::Windows::Forms::GroupBox^  groupBox2;
+	private: System::Windows::Forms::TextBox^  textBox8;
+
+
+	private: System::Windows::Forms::Button^  button7;
+	private: System::Windows::Forms::TextBox^  textBox9;
+	private: System::Windows::Forms::TextBox^  textBox10;
+	private: System::Windows::Forms::TextBox^  textBox11;
+	private: System::Windows::Forms::Label^  label9;
+	private: System::Windows::Forms::Label^  label10;
+	private: System::Windows::Forms::Label^  label11;
+	private: System::Windows::Forms::Label^  label12;
+	private: System::Windows::Forms::ToolStripMenuItem^  添加管理员ToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  关闭ToolStripMenuItem;
+
 	private: System::ComponentModel::IContainer^  components;
 
 	private:
@@ -95,6 +142,7 @@ namespace LMS {
 			this->保存ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->打印ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->打印预览ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->关闭ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->串口ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->串口设置ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->打开串口ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -103,6 +151,8 @@ namespace LMS {
 			this->登录ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->注册ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->退出登录ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->我的ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->添加管理员ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->帮助ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->关于ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->退出ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -121,9 +171,45 @@ namespace LMS {
 			this->toolStripStatusLabel5 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
 			this->toolStripStatusLabel6 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
+			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
+			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox11 = (gcnew System::Windows::Forms::TextBox());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->menuStrip1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->groupBox1->SuspendLayout();
+			this->groupBox2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// menuStrip1
@@ -135,46 +221,55 @@ namespace LMS {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1440, 35);
+			this->menuStrip1->Padding = System::Windows::Forms::Padding(5, 2, 0, 2);
+			this->menuStrip1->Size = System::Drawing::Size(1500, 33);
 			this->menuStrip1->TabIndex = 1;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
 			// 打开ToolStripMenuItem
 			// 
-			this->打开ToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
+			this->打开ToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
 				this->文件ToolStripMenuItem,
-					this->保存ToolStripMenuItem, this->打印ToolStripMenuItem, this->打印预览ToolStripMenuItem
+					this->保存ToolStripMenuItem, this->打印ToolStripMenuItem, this->打印预览ToolStripMenuItem, this->关闭ToolStripMenuItem
 			});
-			this->打开ToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
+			this->打开ToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(134)));
 			this->打开ToolStripMenuItem->Name = L"打开ToolStripMenuItem";
 			this->打开ToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Alt | System::Windows::Forms::Keys::F));
-			this->打开ToolStripMenuItem->Size = System::Drawing::Size(89, 31);
+			this->打开ToolStripMenuItem->Size = System::Drawing::Size(90, 29);
 			this->打开ToolStripMenuItem->Text = L"文件(F)";
 			// 
 			// 文件ToolStripMenuItem
 			// 
 			this->文件ToolStripMenuItem->Name = L"文件ToolStripMenuItem";
-			this->文件ToolStripMenuItem->Size = System::Drawing::Size(170, 32);
+			this->文件ToolStripMenuItem->Size = System::Drawing::Size(181, 30);
 			this->文件ToolStripMenuItem->Text = L"打开";
+			this->文件ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::文件ToolStripMenuItem_Click);
 			// 
 			// 保存ToolStripMenuItem
 			// 
 			this->保存ToolStripMenuItem->Name = L"保存ToolStripMenuItem";
-			this->保存ToolStripMenuItem->Size = System::Drawing::Size(170, 32);
+			this->保存ToolStripMenuItem->Size = System::Drawing::Size(181, 30);
 			this->保存ToolStripMenuItem->Text = L"保存";
 			// 
 			// 打印ToolStripMenuItem
 			// 
 			this->打印ToolStripMenuItem->Name = L"打印ToolStripMenuItem";
-			this->打印ToolStripMenuItem->Size = System::Drawing::Size(170, 32);
+			this->打印ToolStripMenuItem->Size = System::Drawing::Size(181, 30);
 			this->打印ToolStripMenuItem->Text = L"打印";
 			// 
 			// 打印预览ToolStripMenuItem
 			// 
 			this->打印预览ToolStripMenuItem->Name = L"打印预览ToolStripMenuItem";
-			this->打印预览ToolStripMenuItem->Size = System::Drawing::Size(170, 32);
+			this->打印预览ToolStripMenuItem->Size = System::Drawing::Size(181, 30);
 			this->打印预览ToolStripMenuItem->Text = L"打印预览";
+			// 
+			// 关闭ToolStripMenuItem
+			// 
+			this->关闭ToolStripMenuItem->Name = L"关闭ToolStripMenuItem";
+			this->关闭ToolStripMenuItem->Size = System::Drawing::Size(181, 30);
+			this->关闭ToolStripMenuItem->Text = L"关闭";
+			this->关闭ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::关闭ToolStripMenuItem_Click);
 			// 
 			// 串口ToolStripMenuItem
 			// 
@@ -182,90 +277,107 @@ namespace LMS {
 				this->串口设置ToolStripMenuItem,
 					this->打开串口ToolStripMenuItem, this->关闭串口ToolStripMenuItem
 			});
-			this->串口ToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
+			this->串口ToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(134)));
 			this->串口ToolStripMenuItem->Name = L"串口ToolStripMenuItem";
 			this->串口ToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Alt | System::Windows::Forms::Keys::S));
-			this->串口ToolStripMenuItem->Size = System::Drawing::Size(90, 31);
+			this->串口ToolStripMenuItem->Size = System::Drawing::Size(92, 29);
 			this->串口ToolStripMenuItem->Text = L"串口(S)";
+			this->串口ToolStripMenuItem->DropDownItemClicked += gcnew System::Windows::Forms::ToolStripItemClickedEventHandler(this, &Form1::串口ToolStripMenuItem_DropDownItemClicked);
 			// 
 			// 串口设置ToolStripMenuItem
 			// 
 			this->串口设置ToolStripMenuItem->Name = L"串口设置ToolStripMenuItem";
-			this->串口设置ToolStripMenuItem->Size = System::Drawing::Size(170, 32);
+			this->串口设置ToolStripMenuItem->Size = System::Drawing::Size(181, 30);
 			this->串口设置ToolStripMenuItem->Text = L"串口设置";
+			this->串口设置ToolStripMenuItem->DropDownItemClicked += gcnew System::Windows::Forms::ToolStripItemClickedEventHandler(this, &Form1::串口设置ToolStripMenuItem_DropDownItemClicked);
+			this->串口设置ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::串口设置ToolStripMenuItem_Click);
 			// 
 			// 打开串口ToolStripMenuItem
 			// 
 			this->打开串口ToolStripMenuItem->Name = L"打开串口ToolStripMenuItem";
-			this->打开串口ToolStripMenuItem->Size = System::Drawing::Size(170, 32);
+			this->打开串口ToolStripMenuItem->Size = System::Drawing::Size(181, 30);
 			this->打开串口ToolStripMenuItem->Text = L"打开串口";
 			// 
 			// 关闭串口ToolStripMenuItem
 			// 
 			this->关闭串口ToolStripMenuItem->Name = L"关闭串口ToolStripMenuItem";
-			this->关闭串口ToolStripMenuItem->Size = System::Drawing::Size(170, 32);
+			this->关闭串口ToolStripMenuItem->Size = System::Drawing::Size(181, 30);
 			this->关闭串口ToolStripMenuItem->Text = L"关闭串口";
 			// 
 			// 用户ToolStripMenuItem
 			// 
-			this->用户ToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+			this->用户ToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
 				this->登录ToolStripMenuItem,
-					this->注册ToolStripMenuItem, this->退出登录ToolStripMenuItem
+					this->注册ToolStripMenuItem, this->退出登录ToolStripMenuItem, this->我的ToolStripMenuItem, this->添加管理员ToolStripMenuItem
 			});
-			this->用户ToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
+			this->用户ToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(134)));
 			this->用户ToolStripMenuItem->Name = L"用户ToolStripMenuItem";
 			this->用户ToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Alt | System::Windows::Forms::Keys::U));
-			this->用户ToolStripMenuItem->Size = System::Drawing::Size(93, 31);
+			this->用户ToolStripMenuItem->Size = System::Drawing::Size(92, 29);
 			this->用户ToolStripMenuItem->Text = L"用户(U)";
 			// 
 			// 登录ToolStripMenuItem
 			// 
 			this->登录ToolStripMenuItem->Name = L"登录ToolStripMenuItem";
-			this->登录ToolStripMenuItem->Size = System::Drawing::Size(170, 32);
+			this->登录ToolStripMenuItem->Size = System::Drawing::Size(190, 30);
 			this->登录ToolStripMenuItem->Text = L"登录";
 			this->登录ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::登录ToolStripMenuItem_Click);
 			// 
 			// 注册ToolStripMenuItem
 			// 
 			this->注册ToolStripMenuItem->Name = L"注册ToolStripMenuItem";
-			this->注册ToolStripMenuItem->Size = System::Drawing::Size(170, 32);
+			this->注册ToolStripMenuItem->Size = System::Drawing::Size(190, 30);
 			this->注册ToolStripMenuItem->Text = L"注册";
 			this->注册ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::注册ToolStripMenuItem_Click);
 			// 
 			// 退出登录ToolStripMenuItem
 			// 
 			this->退出登录ToolStripMenuItem->Name = L"退出登录ToolStripMenuItem";
-			this->退出登录ToolStripMenuItem->Size = System::Drawing::Size(170, 32);
+			this->退出登录ToolStripMenuItem->Size = System::Drawing::Size(190, 30);
 			this->退出登录ToolStripMenuItem->Text = L"退出登录";
 			this->退出登录ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::退出登录ToolStripMenuItem_Click);
 			// 
+			// 我的ToolStripMenuItem
+			// 
+			this->我的ToolStripMenuItem->Name = L"我的ToolStripMenuItem";
+			this->我的ToolStripMenuItem->Size = System::Drawing::Size(190, 30);
+			this->我的ToolStripMenuItem->Text = L"用户信息";
+			this->我的ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::我的ToolStripMenuItem_Click);
+			// 
+			// 添加管理员ToolStripMenuItem
+			// 
+			this->添加管理员ToolStripMenuItem->Name = L"添加管理员ToolStripMenuItem";
+			this->添加管理员ToolStripMenuItem->Size = System::Drawing::Size(190, 30);
+			this->添加管理员ToolStripMenuItem->Text = L"添加管理员";
+			this->添加管理员ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::添加管理员ToolStripMenuItem_Click);
+			// 
 			// 帮助ToolStripMenuItem
 			// 
-			this->帮助ToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
+			this->帮助ToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(134)));
 			this->帮助ToolStripMenuItem->Name = L"帮助ToolStripMenuItem";
 			this->帮助ToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Alt | System::Windows::Forms::Keys::H));
-			this->帮助ToolStripMenuItem->Size = System::Drawing::Size(93, 31);
+			this->帮助ToolStripMenuItem->Size = System::Drawing::Size(92, 29);
 			this->帮助ToolStripMenuItem->Text = L"帮助(H)";
 			// 
 			// 关于ToolStripMenuItem
 			// 
-			this->关于ToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
+			this->关于ToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(134)));
 			this->关于ToolStripMenuItem->Name = L"关于ToolStripMenuItem";
 			this->关于ToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Alt | System::Windows::Forms::Keys::A));
-			this->关于ToolStripMenuItem->Size = System::Drawing::Size(92, 31);
+			this->关于ToolStripMenuItem->Size = System::Drawing::Size(92, 29);
 			this->关于ToolStripMenuItem->Text = L"关于(A)";
 			// 
 			// 退出ToolStripMenuItem
 			// 
-			this->退出ToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
+			this->退出ToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(134)));
 			this->退出ToolStripMenuItem->Name = L"退出ToolStripMenuItem";
 			this->退出ToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Alt | System::Windows::Forms::Keys::E));
-			this->退出ToolStripMenuItem->Size = System::Drawing::Size(89, 31);
+			this->退出ToolStripMenuItem->Size = System::Drawing::Size(91, 29);
 			this->退出ToolStripMenuItem->Text = L"退出(E)";
 			this->退出ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::退出ToolStripMenuItem_Click);
 			// 
@@ -276,9 +388,9 @@ namespace LMS {
 				this->toolStripButton1,
 					this->toolStripButton2, this->toolStripButton3, this->toolStripButton4, this->toolStripButton5
 			});
-			this->toolStrip1->Location = System::Drawing::Point(0, 35);
+			this->toolStrip1->Location = System::Drawing::Point(0, 33);
 			this->toolStrip1->Name = L"toolStrip1";
-			this->toolStrip1->Size = System::Drawing::Size(1440, 27);
+			this->toolStrip1->Size = System::Drawing::Size(1500, 27);
 			this->toolStrip1->TabIndex = 2;
 			this->toolStrip1->Text = L"toolStrip1";
 			// 
@@ -335,56 +447,57 @@ namespace LMS {
 					this->toolStripStatusLabel2, this->toolStripProgressBar1, this->toolStripStatusLabel3, this->toolStripStatusLabel4, this->toolStripStatusLabel5,
 					this->toolStripStatusLabel6
 			});
-			this->statusStrip1->Location = System::Drawing::Point(0, 875);
+			this->statusStrip1->Location = System::Drawing::Point(0, 819);
 			this->statusStrip1->Name = L"statusStrip1";
-			this->statusStrip1->Size = System::Drawing::Size(1440, 25);
+			this->statusStrip1->Padding = System::Windows::Forms::Padding(1, 0, 13, 0);
+			this->statusStrip1->Size = System::Drawing::Size(1500, 30);
 			this->statusStrip1->TabIndex = 3;
 			this->statusStrip1->Text = L"statusStrip1";
 			// 
 			// toolStripStatusLabel1
 			// 
 			this->toolStripStatusLabel1->Name = L"toolStripStatusLabel1";
-			this->toolStripStatusLabel1->Size = System::Drawing::Size(167, 20);
+			this->toolStripStatusLabel1->Size = System::Drawing::Size(167, 25);
 			this->toolStripStatusLabel1->Text = L"toolStripStatusLabel1";
 			// 
 			// toolStripStatusLabel2
 			// 
 			this->toolStripStatusLabel2->Name = L"toolStripStatusLabel2";
-			this->toolStripStatusLabel2->Size = System::Drawing::Size(167, 20);
+			this->toolStripStatusLabel2->Size = System::Drawing::Size(167, 25);
 			this->toolStripStatusLabel2->Text = L"toolStripStatusLabel2";
 			// 
 			// toolStripProgressBar1
 			// 
 			this->toolStripProgressBar1->Maximum = 60;
 			this->toolStripProgressBar1->Name = L"toolStripProgressBar1";
-			this->toolStripProgressBar1->Size = System::Drawing::Size(100, 19);
+			this->toolStripProgressBar1->Size = System::Drawing::Size(100, 24);
 			this->toolStripProgressBar1->Step = 1;
 			// 
 			// toolStripStatusLabel3
 			// 
 			this->toolStripStatusLabel3->AutoSize = false;
 			this->toolStripStatusLabel3->Name = L"toolStripStatusLabel3";
-			this->toolStripStatusLabel3->Size = System::Drawing::Size(450, 20);
+			this->toolStripStatusLabel3->Size = System::Drawing::Size(450, 25);
 			// 
 			// toolStripStatusLabel4
 			// 
 			this->toolStripStatusLabel4->AutoSize = false;
 			this->toolStripStatusLabel4->Name = L"toolStripStatusLabel4";
-			this->toolStripStatusLabel4->Size = System::Drawing::Size(167, 20);
+			this->toolStripStatusLabel4->Size = System::Drawing::Size(167, 25);
 			this->toolStripStatusLabel4->Text = L"toolStripStatusLabel4";
 			// 
 			// toolStripStatusLabel5
 			// 
 			this->toolStripStatusLabel5->AutoSize = false;
 			this->toolStripStatusLabel5->Name = L"toolStripStatusLabel5";
-			this->toolStripStatusLabel5->Size = System::Drawing::Size(167, 20);
+			this->toolStripStatusLabel5->Size = System::Drawing::Size(167, 25);
 			this->toolStripStatusLabel5->Text = L"toolStripStatusLabel5";
 			// 
 			// toolStripStatusLabel6
 			// 
 			this->toolStripStatusLabel6->AutoSize = false;
 			this->toolStripStatusLabel6->Name = L"toolStripStatusLabel6";
-			this->toolStripStatusLabel6->Size = System::Drawing::Size(167, 20);
+			this->toolStripStatusLabel6->Size = System::Drawing::Size(167, 25);
 			this->toolStripStatusLabel6->Text = L"toolStripStatusLabel6";
 			// 
 			// timer1
@@ -393,19 +506,356 @@ namespace LMS {
 			this->timer1->Interval = 1000;
 			this->timer1->Tick += gcnew System::EventHandler(this, &Form1::timer1_Tick);
 			// 
+			// listBox1
+			// 
+			this->listBox1->FormattingEnabled = true;
+			this->listBox1->ItemHeight = 15;
+			this->listBox1->Location = System::Drawing::Point(504, 627);
+			this->listBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->listBox1->Name = L"listBox1";
+			this->listBox1->Size = System::Drawing::Size(372, 169);
+			this->listBox1->TabIndex = 4;
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Location = System::Drawing::Point(571, 122);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(121, 23);
+			this->comboBox1->TabIndex = 5;
+			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Form1::comboBox1_SelectedIndexChanged);
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(455, 122);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(82, 15);
+			this->label1->TabIndex = 6;
+			this->label1->Text = L"选择图书馆";
+			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Location = System::Drawing::Point(306, 234);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->RowTemplate->Height = 27;
+			this->dataGridView1->Size = System::Drawing::Size(844, 374);
+			this->dataGridView1->TabIndex = 7;
+			this->dataGridView1->CurrentCellChanged += gcnew System::EventHandler(this, &Form1::dataGridView1_CurrentCellChanged);
+			// 
+			// groupBox1
+			// 
+			this->groupBox1->Controls->Add(this->textBox1);
+			this->groupBox1->Controls->Add(this->button3);
+			this->groupBox1->Controls->Add(this->button2);
+			this->groupBox1->Controls->Add(this->button1);
+			this->groupBox1->Controls->Add(this->textBox4);
+			this->groupBox1->Controls->Add(this->textBox3);
+			this->groupBox1->Controls->Add(this->textBox2);
+			this->groupBox1->Controls->Add(this->label5);
+			this->groupBox1->Controls->Add(this->label4);
+			this->groupBox1->Controls->Add(this->label3);
+			this->groupBox1->Controls->Add(this->label2);
+			this->groupBox1->Location = System::Drawing::Point(1181, 227);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox1->Name = L"groupBox1";
+			this->groupBox1->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox1->Size = System::Drawing::Size(307, 282);
+			this->groupBox1->TabIndex = 8;
+			this->groupBox1->TabStop = false;
+			this->groupBox1->Text = L"数据库管理";
+			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(120, 39);
+			this->textBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(100, 25);
+			this->textBox1->TabIndex = 11;
+			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(221, 238);
+			this->button3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(75, 22);
+			this->button3->TabIndex = 10;
+			this->button3->Text = L"修改";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &Form1::button3_Click);
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(101, 238);
+			this->button2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(75, 22);
+			this->button2->TabIndex = 9;
+			this->button2->Text = L"删除";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &Form1::button2_Click);
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(5, 238);
+			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(75, 22);
+			this->button1->TabIndex = 8;
+			this->button1->Text = L"添加";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
+			// 
+			// textBox4
+			// 
+			this->textBox4->Location = System::Drawing::Point(120, 165);
+			this->textBox4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(100, 25);
+			this->textBox4->TabIndex = 7;
+			// 
+			// textBox3
+			// 
+			this->textBox3->Location = System::Drawing::Point(111, 127);
+			this->textBox3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(100, 25);
+			this->textBox3->TabIndex = 6;
+			// 
+			// textBox2
+			// 
+			this->textBox2->Location = System::Drawing::Point(120, 82);
+			this->textBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(100, 25);
+			this->textBox2->TabIndex = 5;
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(29, 175);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(52, 15);
+			this->label5->TabIndex = 3;
+			this->label5->Text = L"出版社";
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Location = System::Drawing::Point(27, 130);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(37, 15);
+			this->label4->TabIndex = 2;
+			this->label4->Text = L"作者";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(27, 82);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(37, 15);
+			this->label3->TabIndex = 1;
+			this->label3->Text = L"书名";
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(27, 49);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(23, 15);
+			this->label2->TabIndex = 0;
+			this->label2->Text = L"ID";
+			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(339, 169);
+			this->button4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(75, 22);
+			this->button4->TabIndex = 9;
+			this->button4->Text = L"查找";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &Form1::button4_Click);
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Location = System::Drawing::Point(455, 173);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(37, 15);
+			this->label6->TabIndex = 10;
+			this->label6->Text = L"书名";
+			// 
+			// textBox5
+			// 
+			this->textBox5->Location = System::Drawing::Point(524, 170);
+			this->textBox5->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox5->Name = L"textBox5";
+			this->textBox5->Size = System::Drawing::Size(100, 25);
+			this->textBox5->TabIndex = 11;
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Location = System::Drawing::Point(644, 178);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(37, 15);
+			this->label7->TabIndex = 12;
+			this->label7->Text = L"作者";
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Location = System::Drawing::Point(877, 181);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(52, 15);
+			this->label8->TabIndex = 13;
+			this->label8->Text = L"出版社";
+			// 
+			// textBox6
+			// 
+			this->textBox6->Location = System::Drawing::Point(722, 175);
+			this->textBox6->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox6->Name = L"textBox6";
+			this->textBox6->Size = System::Drawing::Size(100, 25);
+			this->textBox6->TabIndex = 14;
+			// 
+			// textBox7
+			// 
+			this->textBox7->Location = System::Drawing::Point(966, 178);
+			this->textBox7->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox7->Name = L"textBox7";
+			this->textBox7->Size = System::Drawing::Size(100, 25);
+			this->textBox7->TabIndex = 15;
+			// 
+			// groupBox2
+			// 
+			this->groupBox2->Controls->Add(this->textBox8);
+			this->groupBox2->Controls->Add(this->button7);
+			this->groupBox2->Controls->Add(this->textBox9);
+			this->groupBox2->Controls->Add(this->textBox10);
+			this->groupBox2->Controls->Add(this->textBox11);
+			this->groupBox2->Controls->Add(this->label9);
+			this->groupBox2->Controls->Add(this->label10);
+			this->groupBox2->Controls->Add(this->label11);
+			this->groupBox2->Controls->Add(this->label12);
+			this->groupBox2->Location = System::Drawing::Point(12, 270);
+			this->groupBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox2->Name = L"groupBox2";
+			this->groupBox2->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox2->Size = System::Drawing::Size(267, 282);
+			this->groupBox2->TabIndex = 12;
+			this->groupBox2->TabStop = false;
+			this->groupBox2->Text = L"用户服务";
+			// 
+			// textBox8
+			// 
+			this->textBox8->Location = System::Drawing::Point(120, 39);
+			this->textBox8->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox8->Name = L"textBox8";
+			this->textBox8->Size = System::Drawing::Size(100, 25);
+			this->textBox8->TabIndex = 11;
+			// 
+			// button7
+			// 
+			this->button7->Location = System::Drawing::Point(67, 235);
+			this->button7->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(75, 22);
+			this->button7->TabIndex = 8;
+			this->button7->Text = L"借阅";
+			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &Form1::button7_Click);
+			// 
+			// textBox9
+			// 
+			this->textBox9->Location = System::Drawing::Point(120, 165);
+			this->textBox9->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox9->Name = L"textBox9";
+			this->textBox9->Size = System::Drawing::Size(100, 25);
+			this->textBox9->TabIndex = 7;
+			// 
+			// textBox10
+			// 
+			this->textBox10->Location = System::Drawing::Point(120, 128);
+			this->textBox10->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox10->Name = L"textBox10";
+			this->textBox10->Size = System::Drawing::Size(100, 25);
+			this->textBox10->TabIndex = 6;
+			// 
+			// textBox11
+			// 
+			this->textBox11->Location = System::Drawing::Point(120, 82);
+			this->textBox11->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox11->Name = L"textBox11";
+			this->textBox11->Size = System::Drawing::Size(100, 25);
+			this->textBox11->TabIndex = 5;
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Location = System::Drawing::Point(29, 175);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(52, 15);
+			this->label9->TabIndex = 3;
+			this->label9->Text = L"出版社";
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Location = System::Drawing::Point(27, 130);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(37, 15);
+			this->label10->TabIndex = 2;
+			this->label10->Text = L"作者";
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->Location = System::Drawing::Point(27, 82);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(37, 15);
+			this->label11->TabIndex = 1;
+			this->label11->Text = L"书名";
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->Location = System::Drawing::Point(27, 49);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(23, 15);
+			this->label12->TabIndex = 0;
+			this->label12->Text = L"ID";
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1440, 900);
+			this->ClientSize = System::Drawing::Size(1500, 849);
+			this->Controls->Add(this->groupBox2);
+			this->Controls->Add(this->textBox7);
+			this->Controls->Add(this->textBox6);
+			this->Controls->Add(this->label8);
+			this->Controls->Add(this->label7);
+			this->Controls->Add(this->textBox5);
+			this->Controls->Add(this->label6);
+			this->Controls->Add(this->button4);
+			this->Controls->Add(this->groupBox1);
+			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->comboBox1);
+			this->Controls->Add(this->listBox1);
 			this->Controls->Add(this->statusStrip1);
 			this->Controls->Add(this->toolStrip1);
 			this->Controls->Add(this->menuStrip1);
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::Fixed3D;
 			this->MainMenuStrip = this->menuStrip1;
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"Form1";
 			this->Text = L"Form1";
-			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &Form1::Form1_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->menuStrip1->ResumeLayout(false);
@@ -414,6 +864,11 @@ namespace LMS {
 			this->toolStrip1->PerformLayout();
 			this->statusStrip1->ResumeLayout(false);
 			this->statusStrip1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			this->groupBox1->ResumeLayout(false);
+			this->groupBox1->PerformLayout();
+			this->groupBox2->ResumeLayout(false);
+			this->groupBox2->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -429,7 +884,10 @@ namespace LMS {
 		toolStripStatusLabel2->Text = dateTime.ToLongTimeString(); 	// 显示时间
 
 		toolStripProgressBar1->Value = dateTime.Second;         	// 进度条
+
+		data_receivce();
 	}
+
 private: System::Void 退出ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	this->Close();
 }
@@ -455,6 +913,18 @@ private: System::Void 登录ToolStripMenuItem_Click(System::Object^  sender, Syste
 	LoginForm^aLoginForm = gcnew LoginForm;
 	aLoginForm->ShowDialog();
 	ToolStripFlush();
+	if ((LoginForm::ID == "普通用户") || (LoginForm::ID == "高级用户")){
+		this->groupBox2->Enabled = true;
+		this->我的ToolStripMenuItem->Enabled = true;
+		
+	}
+	if (LoginForm::ID == "管理员")
+	{
+		this->groupBox1->Enabled = true;
+		this->groupBox2->Enabled = true;
+		this->我的ToolStripMenuItem->Enabled = true;
+		this->添加管理员ToolStripMenuItem->Enabled = true;
+	}
 
 }
 
@@ -467,10 +937,16 @@ private: System::Void 登录ToolStripMenuItem_Click(System::Object^  sender, Syste
 
 private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
 	ToolStripFlush();
+	gcnew Connection;
+	this->groupBox1->Enabled = false;
+	this->groupBox2->Enabled = false;
+	this->我的ToolStripMenuItem->Enabled=false;
+	this->添加管理员ToolStripMenuItem->Enabled = false;
+	this->打开串口ToolStripMenuItem->Enabled = false;
 }
 private: System::Void 注册ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
-	RegisterForm^aRegisterFormForm = gcnew RegisterForm;
-	aRegisterFormForm->ShowDialog();
+	RegisterForm^aRegisterForm = gcnew RegisterForm;
+	aRegisterForm->ShowDialog();
 }
 private: System::Void 退出登录ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	MessageBoxButtons buttons = MessageBoxButtons::YesNo;
@@ -490,7 +966,530 @@ private: System::Void 退出登录ToolStripMenuItem_Click(System::Object^  sender, S
 	{
 		LoginForm::LogOut();
 		ToolStripFlush();
+		this->groupBox1->Enabled = false;
+		this->groupBox2->Enabled = false;
+		this->我的ToolStripMenuItem->Enabled = false;
+		this->添加管理员ToolStripMenuItem->Enabled = false;
+		
 	}
+}
+private: System::Void 串口设置ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+
+}
+private: System::Void 串口设置ToolStripMenuItem_DropDownItemClicked(System::Object^  sender, System::Windows::Forms::ToolStripItemClickedEventArgs^  e) {
+}
+
+public:SerialForm^dlg = gcnew SerialForm();
+private: System::Void 串口ToolStripMenuItem_DropDownItemClicked(System::Object^  sender, System::Windows::Forms::ToolStripItemClickedEventArgs^  e) {
+	ToolStripMenuItem^ item;
+
+	if (e == nullptr)
+
+		item = safe_cast<ToolStripMenuItem^>(sender);
+
+	else
+
+		item = safe_cast<ToolStripMenuItem^>(e->ClickedItem);
+	if (item == 串口设置ToolStripMenuItem)
+	{
+		dlg->com->Close();
+		GetComList_Reg(dlg->comboBox4);
+		dlg->ShowDialog();
+	}
+	if (item == 打开串口ToolStripMenuItem)
+	{
+		if (dlg->com->IsOpen || IsFileOpen != 1)return;
+		dlg->com->Open();//打开串口，调整功能chart处理
+	}
+	if (item == 关闭串口ToolStripMenuItem)
+	{
+		dlg->com->Close();//关闭串口，调整功能chart处理
+	}
+}
+
+private:bool GetComList_Reg(ComboBox ^combox)
+{
+	HKEY hkey;
+	int result;
+	int i = 0;
+	result = RegOpenKeyEx(HKEY_LOCAL_MACHINE, _T("Hardware\\DeviceMap\\SerialComm"), NULL, KEY_READ, &hkey);
+	//读注册表
+	if (ERROR_SUCCESS == result)
+	{
+		TCHAR portName[0x100], commName[0x100];
+		DWORD dwLong, dwSize;
+		combox->Items->Clear();
+		while (1)
+		{
+			dwSize = sizeof(portName) / sizeof(TCHAR);
+			dwLong = dwSize;
+			result = RegEnumValue(hkey, i, portName, &dwLong, NULL, NULL, (LPBYTE)commName, &dwSize);
+			if (ERROR_NO_MORE_ITEMS == result)
+			{
+				//枚举串口
+				break;   //commName就是串口名字"COM2"
+			}
+			String ^strComName = gcnew String(commName);
+			combox->Items->Add(strComName);
+			i++;
+		}
+		RegCloseKey(hkey);
+	}
+	if (combox->Items->Count > 0)
+	{
+		combox->SelectedIndex = 0;//默认选中第一个
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+		OleDbConnection^ con1 ;
+		Boolean complete = true;
+		private: System::Data::OleDb::OleDbDataAdapter^  oleDbDataAdapter1 = (gcnew System::Data::OleDb::OleDbDataAdapter());
+				 char count = 0;
+				 int bufroom = 0;
+				 int readed = 0;
+				 int site = 0;
+				public: static array<String^> ^split = gcnew array<String^>(5){ };
+				private :String^ none = "无";
+	
+public: void data_receivce()//接收串口数据
+	{	
+		static char buffer[200] = {0};
+		if (dlg->com->IsOpen)
+		{
+			bufroom = dlg->com->BytesToRead;
+			if (bufroom != 0)
+			{
+					//MessageBox::Show("daozhi");
+				for (int i = site; i < bufroom + readed; i++, site++)
+					{	
+						buffer[i] = dlg->com->ReadChar();
+						if (buffer[i] == 59)count++;
+						if (count == 4)return;
+				}readed = site;
+					
+
+				if (count == 4)
+				{
+					count = 0;			
+					site=readed = 0;
+					String^buff = gcnew String(buffer);
+					buffer[200] = {0};
+					listBox1->Items->Add(buff);
+					split = buff->Split(59);
+					DateTime dateTime = DateTime::Now;
+					String^ strCmd2;
+					con1->Open();    // 打开连接
+					//String^ strTableName = split[0];
+					//strCmd2 = String::Format("INSERT INTO{0} ([书名],[作者],[出版社],[借阅者],[上架时间]) VALUES( '" + split[1] + "','" + split[2] + "','" + split[3] + "','" + none + "',Now() )", strTableName);
+					if (split[0] == (String^)"0")
+						strCmd2 = "INSERT INTO 校本部([书名],[作者],[出版社],[借阅者],[上架时间]) VALUES( '" + split[1] + "','" + split[2] + "','" + split[3] + "','" + none + "',Now() )";
+					else if (split[0] == (String^)"1")
+						strCmd2 = "INSERT INTO 南校([书名],[作者],[出版社],[借阅者],[上架时间]) VALUES( '" + split[1] + "','" + split[2] + "','" + split[3] + "','" + none + "',Now() )";
+					else if (split[0] == (String^)"2")
+						strCmd2 = "INSERT INTO 珠海校区([书名],[作者],[出版社],[借阅者],[上架时间]) VALUES( '" + split[1] + "','" + split[2] + "','" + split[3] + "','" + none + "',Now() )";
+					OleDbCommand^ comm2 = gcnew OleDbCommand(strCmd2, con1); 
+					comm2->ExecuteNonQuery();
+					con1->Close();
+				}
+
+			}
+		}
+	}
+
+
+		Boolean IsFileOpen = 0;
+private: System::Void 文件ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	OpenFileDialog^  pOFD = gcnew OpenFileDialog();
+
+	pOFD->Filter = "Access文件(*.mdb)|*.mdb";
+
+	pOFD->DefaultExt = "mdb";
+
+	if (pOFD->ShowDialog() != System::Windows::Forms::DialogResult::OK) return;
+
+	Connection::strConn = String::Format(
+
+		"Provider=Microsoft.Jet.OLEDB.4.0; Data Source={0}", pOFD->FileName);
+	IsFileOpen = 1;
+
+	//this->我的ToolStripMenuItem->Enabled = true;
+
+	this->打开串口ToolStripMenuItem->Enabled = true;
+	con1 = gcnew OleDbConnection(Connection::strConn);
+
+	OleDbConnection^ con1 = gcnew OleDbConnection(Connection::strConn);
+
+	con1->Open();		// 打开连接
+
+	// 清空组合框的列表项
+
+	this->comboBox1->Items->Clear();
+
+	// 获取数据表名称，并填充到toolStripComboBox1中
+
+	// 指定限制列，用于GetOleDbSchemaTable中,返回第四列为table表
+
+	array<String^>^ strs = gcnew array<String^>{ nullptr, nullptr, nullptr, "TABLE" };
+
+	DataTable^ table = con1->GetOleDbSchemaTable(
+
+		OleDbSchemaGuid::Tables, strs);		// 获取数据表名
+
+	if (table->Rows->Count > 0)
+
+	{
+
+		for each (DataRow^ row in table->Rows)
+
+		{
+			if ((String^)row["TABLE_NAME"] != "用户")
+			this->comboBox1->Items->Add(row["TABLE_NAME"]);
+
+		}
+
+		this->comboBox1->SelectedIndex = 0;
+
+	}
+
+	con1->Close();
+}
+private: System::Void comboBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+	if (IsFileOpen != 1)return;
+
+	int nIndex = this->comboBox1->SelectedIndex;
+
+	if (nIndex < 0) return;
+
+	// 获取选择的数据表名
+
+	String^ strTableName = this->comboBox1->Items[nIndex]->ToString();
+
+	// 使用DataAdapter和DataSet
+
+	String^ cmdText = String::Format("SELECT * FROM {0}", strTableName);
+
+	OleDbDataAdapter^ da1 = gcnew OleDbDataAdapter(cmdText, Connection::strConn);
+
+	DataSet^ theSet1 = gcnew DataSet();
+
+	da1->Fill(theSet1, "Test");			// 重新指定表名称
+
+	this->dataGridView1->DataSource = theSet1;
+
+	this->dataGridView1->DataMember = "Test";	// 指定要打开的表
+
+	this->dataGridView1->AutoResizeColumn(5, DataGridViewAutoSizeColumnMode::AllCellsExceptHeader);
+	/* 直接使用表
+
+	DataTable^ table = gcnew DataTable;
+
+	da1->Fill( table );
+
+	this->dataGridView1->DataSource = table;*/
+}
+
+
+		
+private: System::Void On_SelCell(System::Object^  sender, System::EventArgs^  e) {
+
+	// 使dataGridView1控件中当前选中的记录行内容显示在右边的控件中
+
+	// 获取当前行
+	DataGridViewRow^ curRow = this->dataGridView1->CurrentRow;
+	if (curRow == nullptr) return;
+
+	this->textBox1->Text = curRow->Cells[0]->Value->ToString();
+
+	this->textBox2->Text = curRow->Cells[1]->Value->ToString();
+
+	this->textBox3->Text = curRow->Cells[2]->Value->ToString();
+
+	this->textBox4->Text = curRow->Cells[3]->Value->ToString();
+
+}
+
+
+private: System::Boolean CheckValid(System::Void){
+
+	if (String::IsNullOrEmpty((String^)this->textBox2->Text))return false;
+	if (String::IsNullOrEmpty((String^)this->textBox3->Text))return false;
+	if (String::IsNullOrEmpty((String^)this->textBox4->Text))return false;
+
+}
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (CheckValid()){
+		MessageBox::Show("输入信息不完整，添加失败！");
+		return;
+	}
+	if (IsFileOpen != 1)return;
+	// 判断是否有学生号和课程号都相同的记录，若有，则不添加
+	String^ strCmd1;
+	String^ strTableName = this->comboBox1->Items[this->comboBox1->SelectedIndex]->ToString();
+	//strCmd1 = String::Format("SELECT * FROM {0} WHERE 帐号='{1}'", (String^)strTableName, textBox1->Text);
+		//Data::OleDb::OleDbCommand^ selectCmd = gcnew Data::OleDb::OleDbCommand(strCmd, con1);
+
+	try {
+
+		strCmd1 = String::Format("INSERT INTO {0}([书名],[作者],[出版社],[借阅者],[上架时间]) VALUES( '" + this->textBox2->Text + "','" + this->textBox3->Text + "','" + this->textBox4->Text + "','" + none + "',Now() )", strTableName);
+
+			// 创建可执行命令
+			Data::OleDb::OleDbCommand^ cmd = gcnew Data::OleDb::OleDbCommand(strCmd1, con1);
+
+		// 执行操作
+
+		this->con1->Open();
+
+		cmd->ExecuteNonQuery();
+
+		this->con1->Close();
+
+		// 显示结果
+
+		String^ cmdText = String::Format("SELECT * FROM {0}", strTableName);
+
+		OleDbDataAdapter^ da1 = gcnew OleDbDataAdapter(cmdText, Connection::strConn);
+
+		DataSet^ theSet1 = gcnew DataSet();
+
+		da1->Fill(theSet1, "Test");			// 重新指定表名称
+
+		this->dataGridView1->DataSource = theSet1;
+
+		this->dataGridView1->DataMember = "Test";	// 指定要打开的表
+
+		this->dataGridView1->AutoResizeColumn(5, DataGridViewAutoSizeColumnMode::AllCellsExceptHeader);
+	}
+
+	catch (Data::OleDb::OleDbException^ e)
+
+	{
+		MessageBox::Show(e->Message, "错误");
+	}
+}
+
+private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (CheckValid()){
+		MessageBox::Show("未选中要删除的信息！");
+		return;
+	}
+
+	if (IsFileOpen != 1)return;
+
+	DataGridViewRow^ curRow = this->dataGridView1->CurrentRow;
+	String^ strTableName = this->comboBox1->Items[this->comboBox1->SelectedIndex]->ToString();
+	// 删除记录
+
+
+
+	try {
+
+		String^ strCmd = String::Format("DELETE FROM {0} WHERE ID= {1}", strTableName, this->textBox1->Text);
+
+			// 创建可执行命令
+
+			Data::OleDb::OleDbCommand^ cmd = gcnew Data::OleDb::OleDbCommand(strCmd, con1);
+
+		// 执行操作
+
+			this->con1->Open();
+
+		cmd->ExecuteNonQuery();
+
+		this->con1->Close();
+
+		// 显示结果
+
+		String^ cmdText = String::Format("SELECT * FROM {0}", strTableName);
+
+		OleDbDataAdapter^ da1 = gcnew OleDbDataAdapter(cmdText,Connection::strConn);
+
+		DataSet^ theSet1 = gcnew DataSet();
+
+		da1->Fill(theSet1, "Test");			// 重新指定表名称
+
+		this->dataGridView1->DataSource = theSet1;
+
+		this->dataGridView1->DataMember = "Test";	// 指定要打开的表
+
+		this->dataGridView1->AutoResizeColumn(5, DataGridViewAutoSizeColumnMode::AllCellsExceptHeader);
+
+	}
+
+	catch (Data::OleDb::OleDbException^ e)
+
+	{
+
+		MessageBox::Show(e->Message, "错误");
+
+	}
+}
+
+private: System::Void dataGridView1_CurrentCellChanged(System::Object^  sender, System::EventArgs^  e) {
+	DataGridViewRow^ curRow = this->dataGridView1->CurrentRow;
+	if (curRow == nullptr) return;
+
+	this->textBox1->Text = curRow->Cells[0]->Value->ToString();
+
+	this->textBox2->Text = curRow->Cells[1]->Value->ToString();
+
+	this->textBox3->Text = curRow->Cells[2]->Value->ToString();
+
+	this->textBox4->Text = curRow->Cells[3]->Value->ToString();
+
+	this->textBox8->Text = curRow->Cells[0]->Value->ToString();
+
+	this->textBox11->Text = curRow->Cells[1]->Value->ToString();
+
+	this->textBox10->Text = curRow->Cells[2]->Value->ToString();
+
+	this->textBox9->Text = curRow->Cells[3]->Value->ToString();
+}
+
+
+private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+	
+}
+private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (IsFileOpen != 1)return;
+	// 判断是否有学生号和课程号都相同的记录，若有，则不添加
+	String^ strCmd1;
+	String^ strTableName = this->comboBox1->Items[this->comboBox1->SelectedIndex]->ToString();
+	//strCmd1 = String::Format("SELECT * FROM {0} WHERE 帐号='{1}'", (String^)strTableName, textBox1->Text);
+	//Data::OleDb::OleDbCommand^ selectCmd = gcnew Data::OleDb::OleDbCommand(strCmd, con1);
+
+	try {
+
+		strCmd1 = String::Format("SELECT * FROM {0} WHERE 书名= '{1}' OR 作者= '{2}' OR 出版社= '{3}'", strTableName, textBox5->Text, textBox6->Text, textBox7->Text);
+
+		// 创建可执行命令
+		Data::OleDb::OleDbCommand^ cmd = gcnew Data::OleDb::OleDbCommand(strCmd1, con1);
+
+		// 执行操作
+
+		this->con1->Open();
+
+		cmd->ExecuteNonQuery();
+
+		this->con1->Close();
+
+		OleDbDataAdapter^ da1 = gcnew OleDbDataAdapter(strCmd1,Connection::strConn);
+
+		DataSet^ theSet1 = gcnew DataSet();
+
+		da1->Fill(theSet1, "Test");			// 重新指定表名称
+
+		this->dataGridView1->DataSource = theSet1;
+
+		this->dataGridView1->DataMember = "Test";	// 指定要打开的表
+
+		this->dataGridView1->AutoResizeColumn(5, DataGridViewAutoSizeColumnMode::AllCellsExceptHeader);
+	}
+
+	catch (Data::OleDb::OleDbException^ e)
+
+	{
+		MessageBox::Show(e->Message, "错误");
+	}
+}
+private: System::Void button7_Click(System::Object^  sender, System::EventArgs^  e) {
+			 if (IsFileOpen != 1)return;
+			 if (CheckValid()){
+				 MessageBox::Show("未选中要借阅的图书！");
+				 return;
+			 }
+
+			 DataGridViewRow^ curRow = this->dataGridView1->CurrentRow;
+			 if ((curRow == nullptr))return;
+			 if (((String^)curRow->Cells[4]->Value->ToString() != (String^)"无")){
+				 MessageBox::Show("该图书已被借阅！");
+				 return;
+			 }
+
+			 if ((LoginForm::borrowed == 5) && (LoginForm::ID == "普通用户")){
+				 MessageBox::Show("您的借阅数已达上限！");
+				 return;
+			 }
+
+			 if ((LoginForm::borrowed == 10) && (LoginForm::ID == "高级用户")){
+				 MessageBox::Show("您的借阅数已达上限！");
+				 return;
+			 }
+			 String^ strTableName = this->comboBox1->Items[this->comboBox1->SelectedIndex]->ToString();
+
+			 try {
+
+				
+
+				 String^ strCmd = String::Format("UPDATE {0} SET 借阅者 = '{1}' WHERE  ID= {2}", strTableName, LoginForm::UserName,this->textBox8->Text);
+
+				 Data::OleDb::OleDbCommand^ cmd = gcnew Data::OleDb::OleDbCommand(strCmd, con1);
+
+				 // 执行操作
+
+				 this->con1->Open();
+
+				 cmd->ExecuteNonQuery();
+
+				 this->con1->Close();
+
+				 String^ cmdText = String::Format("SELECT * FROM {0}", strTableName);
+
+				 OleDbDataAdapter^ da1 = gcnew OleDbDataAdapter(cmdText, Connection::strConn);
+
+				 DataSet^ theSet1 = gcnew DataSet();
+
+				 da1->Fill(theSet1, "Test");			// 重新指定表名称
+
+				 this->dataGridView1->DataSource = theSet1;
+
+				 this->dataGridView1->DataMember = "Test";	// 指定要打开的表
+
+				 this->dataGridView1->AutoResizeColumn(5, DataGridViewAutoSizeColumnMode::AllCellsExceptHeader);
+
+				 LoginForm::borrowed++;
+
+				 String^ strCmd1 = String::Format("UPDATE 用户 SET 已借阅 = {1} WHERE  用户名= '{2}'", strTableName, LoginForm::borrowed, LoginForm::UserName);
+
+				 Data::OleDb::OleDbCommand^ cmd1 = gcnew Data::OleDb::OleDbCommand(strCmd1, con1);
+
+				 // 执行操作
+
+				 this->con1->Open();
+
+				 cmd1->ExecuteNonQuery();
+
+				 this->con1->Close();
+
+			 }
+
+			 catch (Data::OleDb::OleDbException^ e)
+
+			 {
+
+				 MessageBox::Show(e->Message, "错误");
+
+			 }
+}
+
+
+private: System::Void 我的ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	MessageForm ^aMessageForm = gcnew MessageForm;
+	aMessageForm->ShowDialog();
+}
+private: System::Void 关闭ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	this->dataGridView1->DataSource = nullptr;
+	this->我的ToolStripMenuItem->Enabled = false;
+	this->打开串口ToolStripMenuItem->Enabled = false;
+	this->comboBox1->Items->Clear();
+	this->comboBox1->Text = "";
+}
+private: System::Void 添加管理员ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	AddManageForm^ aAddManageForm = gcnew AddManageForm();
+	aAddManageForm->ShowDialog();
 }
 };
 }

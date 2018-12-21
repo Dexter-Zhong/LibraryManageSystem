@@ -238,7 +238,6 @@ namespace LMS {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
-			this->CancelButton = this->button3;
 			this->ClientSize = System::Drawing::Size(689, 571);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->textBox3);
@@ -259,7 +258,7 @@ namespace LMS {
 			this->MinimizeBox = false;
 			this->Name = L"LoginForm";
 			this->Text = L"用户登录";
-			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &LoginForm::LoginForm_FormClosing);
+			//this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &LoginForm::LoginForm_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &LoginForm::LoginForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
@@ -295,6 +294,7 @@ namespace LMS {
 		public:static String^UserName= "";
 		public:static String^account = "";
 		public:static String^ID = "";
+		public:static Int32 borrowed = 0;
 
 		public:static void LogOut()
 		{
@@ -358,6 +358,7 @@ namespace LMS {
 						UserName = (String^)row["用户名"];
 						account = (String^)row["帐号"];
 						ID = (String^)row["用户身份"];
+						borrowed = Convert::ToInt32(row["已借阅"]);
 						con1->Close();
 						MessageBox::Show(strLogon);
 						this->Close();
@@ -393,8 +394,6 @@ namespace LMS {
 			MessageBoxIcon::Question, 		/*图标*/
 
 			MessageBoxDefaultButton::Button1	/*默认按钮*/))this->Close();
-			
-
 
 	}
 	private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -402,8 +401,7 @@ namespace LMS {
 		aRegisterForm->ShowDialog() ;
 
 	}
-private: System::Void LoginForm_FormClosing(System::Object^  sender, System::Windows::Forms::FormClosingEventArgs^  e) {
-	
+private: System::Void LoginForm_FormClosing(System::Object^  sender, System::Windows::Forms::FormClosingEventArgs^  e) {	
 }
 
 private:String ^CkeckCode(void)

@@ -33,6 +33,15 @@
     <ClCompile Include="RegisterForm.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="SerialForm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageForm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AddManageForm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -48,6 +57,18 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="RegisterForm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SerialForm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageForm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Connection.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AddManageForm.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -66,6 +87,12 @@
       <Filter>资源文件</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterForm.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageForm.resx">
       <Filter>资源文件</Filter>
     </EmbeddedResource>
   </ItemGroup>
