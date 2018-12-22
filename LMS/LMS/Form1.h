@@ -1541,11 +1541,14 @@ private: System::Void 打印ToolStripMenuItem_Click(System::Object^  sender, Syste
 		this->printDocument1->Print();             	 // 开始打印
 }
 private: System::Void 打印预览ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
-	PrintPreviewDialog^ previewDlg = gcnew PrintPreviewDialog(); //打印预览对话框
+	try{
+		PrintPreviewDialog^ previewDlg = gcnew PrintPreviewDialog(); //打印预览对话框
 
-	previewDlg->Document = this->printDocument1;
+		previewDlg->Document = this->printDocument1;
 
-	previewDlg->ShowDialog();
+		previewDlg->ShowDialog();
+	}
+	catch (...){};
 }
 
 private: System::Void printDocument1_PrintPage(System::Object^  sender, System::Drawing::Printing::PrintPageEventArgs^  e) {
@@ -1578,27 +1581,24 @@ private: System::Void printDocument1_PrintPage(System::Object^  sender, System::
 
 	Drawing::Font^titlesFont = gcnew Drawing::Font(L"宋体", 12, FontStyle::Bold);
 
-	g->DrawString(L"ID", titlesFont, Brushes::Black, left + 40, top + 5);
+	g->DrawString(L"ID", titlesFont, Brushes::Black, left+20, top + 5);
 
-	g->DrawLine(tablesPen, left + 120, top, left + 120, top + 30);          //列分隔线
+	g->DrawLine(tablesPen, left + 60, top, left + 60, top + 30);          //列分隔线
 
-	g->DrawString(L"书名", titlesFont, Brushes::Black, left + 150, top + 5);
+	g->DrawString(L"书名", titlesFont, Brushes::Black, left + 70, top + 5);
 
-	g->DrawLine(tablesPen, left + 220, top, left + 220, top + 30);
+	g->DrawLine(tablesPen, left + 190, top, left + 190, top + 30);
 
-	g->DrawString(L"作者", titlesFont, Brushes::Black, left + 290, top + 5);
+	g->DrawString(L"作者", titlesFont, Brushes::Black, left + 200, top + 5);
 
-	g->DrawLine(tablesPen, left + 340, top, left + 340, top + 30);
+	g->DrawLine(tablesPen, left + 350, top, left + 350, top + 30);
 
-	g->DrawString(L"出版社", titlesFont, Brushes::Black, left + 430, top + 5);
+	g->DrawString(L"出版社", titlesFont, Brushes::Black, left + 360, top + 5);
 	
-	g->DrawLine(tablesPen, left + 440, top, left + 440, top + 30);
+	g->DrawLine(tablesPen, left + 550, top, left + 550, top + 30);
 
-	g->DrawString(L"借阅者", titlesFont, Brushes::Black, left + 530, top + 5);
+	g->DrawString(L"借阅者", titlesFont, Brushes::Black, left + 560, top + 5);
 
-	g->DrawLine(tablesPen, left + 540, top, left + 540, top + 30);
-
-	g->DrawString(L"上架时间", titlesFont, Brushes::Black, left + 730, top + 5);
 
 	//g->DrawLine(tablesPen, left + 430, top, left + 430, top + 30);
 
@@ -1614,27 +1614,23 @@ private: System::Void printDocument1_PrintPage(System::Object^  sender, System::
 
 	for each(ListViewItem^ item in this->listView1->Items) {
 
-		g->DrawString(item->SubItems[0]->Text, tablesFont, Brushes::Black, left + 40, top + 5);      // 学号
+		g->DrawString(item->SubItems[0]->Text, tablesFont,Brushes::Black, left + 20, top + 5);      // 学号
 
-		g->DrawLine(tablesPen, left + 120, top, left + 120, top + 30);             //列分隔线
+		g->DrawLine(tablesPen, left + 60, top, left +60, top + 30);             //列分隔线
 
-		g->DrawString(item->SubItems[1]->Text, tablesFont, Brushes::Black, left + 150, top + 5);    // 姓名
+		g->DrawString(item->SubItems[1]->Text, tablesFont, Brushes::Black, left + 70, top + 5);    // 姓名
 
-		g->DrawLine(tablesPen, left + 220, top, left + 220, top + 30);
+		g->DrawLine(tablesPen, left + 190, top, left + 190, top + 30);
 
-		g->DrawString(item->SubItems[2]->Text, tablesFont, Brushes::Black, left + 290, top + 5);    // 成绩1
+		g->DrawString(item->SubItems[2]->Text, tablesFont, Brushes::Black, left + 200, top + 5);    // 成绩1
 
-		g->DrawLine(tablesPen, left + 340, top, left + 440, top + 30);
+		g->DrawLine(tablesPen, left + 350, top, left + 350, top + 30);
 
-		g->DrawString(item->SubItems[3]->Text, tablesFont, Brushes::Black, left + 430, top + 5);    // 成绩2
+		g->DrawString(item->SubItems[3]->Text, tablesFont, Brushes::Black, left + 360, top + 5);    // 成绩2
 		
-		g->DrawLine(tablesPen, left + 440, top, left + 440, top + 30);
+		g->DrawLine(tablesPen, left + 550, top, left + 550, top + 30);
 
-		g->DrawString(item->SubItems[4]->Text, tablesFont, Brushes::Black, left + 530, top + 5);      // 学号
-
-		g->DrawLine(tablesPen, left + 540, top, left + 540, top + 30);
-
-		g->DrawString(item->SubItems[4]->Text, tablesFont, Brushes::Black, left + 730, top + 5);
+		g->DrawString(item->SubItems[4]->Text, tablesFont, Brushes::Black, left + 560, top + 5);      // 学号
 
 
 
@@ -1654,7 +1650,7 @@ private: System::Void printDocument1_PrintPage(System::Object^  sender, System::
 public:void UpdateListview(DataTable^table)
 {
 	ListViewItem^ item;
-
+	listView1->Items->Clear();
 	for each (DataRow^ row in table->Rows)
 
 	{
