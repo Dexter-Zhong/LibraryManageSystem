@@ -51,6 +51,7 @@ namespace LMS {
 	private: System::Windows::Forms::Button^  button4;
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::TextBox^  textBox3;
+	private: System::Windows::Forms::Label^  label4;
 
 	private:
 		/// <summary>
@@ -65,6 +66,7 @@ namespace LMS {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(AddManageForm::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
@@ -75,73 +77,80 @@ namespace LMS {
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label1->BackColor = System::Drawing::Color::Transparent;
+			this->label1->Font = (gcnew System::Drawing::Font(L"华文新魏", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label1->Location = System::Drawing::Point(119, 104);
-			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label1->Location = System::Drawing::Point(55, 132);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(60, 24);
+			this->label1->Size = System::Drawing::Size(62, 25);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"帐号";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label2->BackColor = System::Drawing::Color::Transparent;
+			this->label2->Font = (gcnew System::Drawing::Font(L"华文新魏", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label2->Location = System::Drawing::Point(119, 164);
-			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label2->Location = System::Drawing::Point(55, 182);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(60, 24);
+			this->label2->Size = System::Drawing::Size(62, 25);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"密码";
 			this->label2->Click += gcnew System::EventHandler(this, &AddManageForm::label2_Click);
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(235, 104);
-			this->textBox1->Margin = System::Windows::Forms::Padding(4);
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"华文新魏", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->textBox1->Location = System::Drawing::Point(148, 132);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(217, 25);
+			this->textBox1->Size = System::Drawing::Size(195, 29);
 			this->textBox1->TabIndex = 2;
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(235, 164);
-			this->textBox2->Margin = System::Windows::Forms::Padding(4);
+			this->textBox2->Font = (gcnew System::Drawing::Font(L"华文新魏", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->textBox2->Location = System::Drawing::Point(148, 182);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(217, 25);
+			this->textBox2->Size = System::Drawing::Size(195, 29);
 			this->textBox2->TabIndex = 3;
 			// 
 			// checkBox1
 			// 
 			this->checkBox1->AutoSize = true;
+			this->checkBox1->BackColor = System::Drawing::Color::Transparent;
 			this->checkBox1->Checked = true;
 			this->checkBox1->CheckState = System::Windows::Forms::CheckState::Checked;
-			this->checkBox1->Font = (gcnew System::Drawing::Font(L"宋体", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->checkBox1->Font = (gcnew System::Drawing::Font(L"华文新魏", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->checkBox1->Location = System::Drawing::Point(503, 162);
-			this->checkBox1->Margin = System::Windows::Forms::Padding(4);
+			this->checkBox1->Location = System::Drawing::Point(355, 184);
 			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(111, 24);
+			this->checkBox1->Size = System::Drawing::Size(113, 25);
 			this->checkBox1->TabIndex = 4;
 			this->checkBox1->Text = L"显示密码";
-			this->checkBox1->UseVisualStyleBackColor = true;
+			this->checkBox1->UseVisualStyleBackColor = false;
 			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &AddManageForm::checkBox1_CheckedChanged);
 			// 
 			// button2
 			// 
-			this->button2->Font = (gcnew System::Drawing::Font(L"宋体", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.BackgroundImage")));
+			this->button2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->button2->FlatAppearance->BorderColor = System::Drawing::Color::Maroon;
+			this->button2->FlatAppearance->BorderSize = 2;
+			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button2->Font = (gcnew System::Drawing::Font(L"华文新魏", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->button2->Location = System::Drawing::Point(288, 357);
-			this->button2->Margin = System::Windows::Forms::Padding(4);
+			this->button2->Location = System::Drawing::Point(209, 257);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(112, 75);
+			this->button2->Size = System::Drawing::Size(80, 35);
 			this->button2->TabIndex = 7;
 			this->button2->Text = L"取消";
 			this->button2->UseVisualStyleBackColor = true;
@@ -149,13 +158,17 @@ namespace LMS {
 			// 
 			// button3
 			// 
+			this->button3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.BackgroundImage")));
+			this->button3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->button3->DialogResult = System::Windows::Forms::DialogResult::Cancel;
-			this->button3->Font = (gcnew System::Drawing::Font(L"宋体", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button3->FlatAppearance->BorderColor = System::Drawing::Color::Maroon;
+			this->button3->FlatAppearance->BorderSize = 2;
+			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button3->Font = (gcnew System::Drawing::Font(L"华文新魏", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->button3->Location = System::Drawing::Point(481, 357);
-			this->button3->Margin = System::Windows::Forms::Padding(4);
+			this->button3->Location = System::Drawing::Point(354, 257);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(111, 75);
+			this->button3->Size = System::Drawing::Size(80, 35);
 			this->button3->TabIndex = 8;
 			this->button3->Text = L"退出";
 			this->button3->UseVisualStyleBackColor = true;
@@ -163,12 +176,16 @@ namespace LMS {
 			// 
 			// button4
 			// 
-			this->button4->Font = (gcnew System::Drawing::Font(L"宋体", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button4.BackgroundImage")));
+			this->button4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->button4->FlatAppearance->BorderColor = System::Drawing::Color::Maroon;
+			this->button4->FlatAppearance->BorderSize = 2;
+			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button4->Font = (gcnew System::Drawing::Font(L"华文新魏", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->button4->Location = System::Drawing::Point(97, 357);
-			this->button4->Margin = System::Windows::Forms::Padding(4);
+			this->button4->Location = System::Drawing::Point(66, 257);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(115, 75);
+			this->button4->Size = System::Drawing::Size(80, 35);
 			this->button4->TabIndex = 9;
 			this->button4->Text = L"确定";
 			this->button4->UseVisualStyleBackColor = true;
@@ -177,32 +194,47 @@ namespace LMS {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"宋体", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label3->BackColor = System::Drawing::Color::Transparent;
+			this->label3->Font = (gcnew System::Drawing::Font(L"华文新魏", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label3->Location = System::Drawing::Point(108, 41);
-			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label3->Location = System::Drawing::Point(55, 82);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(85, 24);
+			this->label3->Size = System::Drawing::Size(87, 25);
 			this->label3->TabIndex = 10;
 			this->label3->Text = L"用户名";
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(235, 41);
-			this->textBox3->Margin = System::Windows::Forms::Padding(4);
+			this->textBox3->Font = (gcnew System::Drawing::Font(L"华文新魏", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->textBox3->Location = System::Drawing::Point(148, 82);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(217, 25);
+			this->textBox3->Size = System::Drawing::Size(195, 29);
 			this->textBox3->TabIndex = 11;
 			// 
-			// RegisterForm
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->BackColor = System::Drawing::Color::Transparent;
+			this->label4->Font = (gcnew System::Drawing::Font(L"华文行楷", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->label4->Location = System::Drawing::Point(122, 9);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(267, 51);
+			this->label4->TabIndex = 12;
+			this->label4->Text = L"添加管理员";
+			// 
+			// AddManageForm
 			// 
 			this->AcceptButton = this->button4;
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->CancelButton = this->button3;
-			this->ClientSize = System::Drawing::Size(689, 571);
+			this->ClientSize = System::Drawing::Size(517, 344);
+			this->Controls->Add(this->label4);
 			this->Controls->Add(this->textBox3);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->button4);
@@ -214,10 +246,11 @@ namespace LMS {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::Fixed3D;
-			this->Margin = System::Windows::Forms::Padding(4);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;
-			this->Name = L"RegisterForm";
+			this->Name = L"AddManageForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->Text = L"管理员添加";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &AddManageForm::RegisterForm_FormClosing);
 			this->ResumeLayout(false);

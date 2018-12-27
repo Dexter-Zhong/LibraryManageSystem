@@ -42,6 +42,12 @@
     <ClCompile Include="AddManageForm.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="HelpForm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AboutForm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -71,6 +77,12 @@
     <ClInclude Include="AddManageForm.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="HelpForm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AboutForm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -79,6 +91,9 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="icon1.ico">
       <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>
@@ -93,6 +108,9 @@
       <Filter>资源文件</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="MessageForm.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddManageForm.resx">
       <Filter>资源文件</Filter>
     </EmbeddedResource>
   </ItemGroup>

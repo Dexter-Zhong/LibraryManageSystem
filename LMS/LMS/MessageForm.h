@@ -51,6 +51,8 @@ namespace LMS {
 	private: System::Windows::Forms::Label^  label12;
 	private: System::Windows::Forms::ComboBox^  comboBox1;
 	private: System::Windows::Forms::Label^  label2;
+
+	private: System::Windows::Forms::Label^  label3;
 	protected:
 
 	private:
@@ -66,6 +68,7 @@ namespace LMS {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(MessageForm::typeid));
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
@@ -81,23 +84,28 @@ namespace LMS {
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->groupBox2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// dataGridView1
 			// 
+			this->dataGridView1->BackgroundColor = System::Drawing::Color::LightGoldenrodYellow;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(267, 165);
-			this->dataGridView1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->dataGridView1->Location = System::Drawing::Point(58, 361);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowTemplate->Height = 27;
-			this->dataGridView1->Size = System::Drawing::Size(844, 374);
+			this->dataGridView1->Size = System::Drawing::Size(706, 187);
 			this->dataGridView1->TabIndex = 8;
 			this->dataGridView1->CurrentCellChanged += gcnew System::EventHandler(this, &MessageForm::dataGridView1_CurrentCellChanged);
 			// 
 			// groupBox2
 			// 
+			this->groupBox2->BackColor = System::Drawing::Color::Transparent;
+			this->groupBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"groupBox2.BackgroundImage")));
+			this->groupBox2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->groupBox2->Controls->Add(this->textBox1);
 			this->groupBox2->Controls->Add(this->label1);
 			this->groupBox2->Controls->Add(this->textBox8);
@@ -109,46 +117,60 @@ namespace LMS {
 			this->groupBox2->Controls->Add(this->label10);
 			this->groupBox2->Controls->Add(this->label11);
 			this->groupBox2->Controls->Add(this->label12);
-			this->groupBox2->Location = System::Drawing::Point(15, 188);
-			this->groupBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox2->Font = (gcnew System::Drawing::Font(L"华文新魏", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->groupBox2->Location = System::Drawing::Point(48, 104);
+			this->groupBox2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->groupBox2->Size = System::Drawing::Size(267, 333);
+			this->groupBox2->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->groupBox2->Size = System::Drawing::Size(716, 240);
 			this->groupBox2->TabIndex = 13;
 			this->groupBox2->TabStop = false;
-			this->groupBox2->Text = L"图书信息";
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(138, 244);
-			this->textBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"华文新魏", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->textBox1->Location = System::Drawing::Point(503, 43);
+			this->textBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(100, 25);
+			this->textBox1->Size = System::Drawing::Size(125, 29);
 			this->textBox1->TabIndex = 13;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(27, 244);
+			this->label1->BackColor = System::Drawing::Color::Transparent;
+			this->label1->Font = (gcnew System::Drawing::Font(L"华文新魏", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->label1->Location = System::Drawing::Point(348, 46);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(105, 15);
+			this->label1->Size = System::Drawing::Size(151, 21);
 			this->label1->TabIndex = 12;
 			this->label1->Text = L"已借阅（/本）";
 			// 
 			// textBox8
 			// 
-			this->textBox8->Location = System::Drawing::Point(120, 39);
-			this->textBox8->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox8->Font = (gcnew System::Drawing::Font(L"华文新魏", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->textBox8->Location = System::Drawing::Point(129, 43);
+			this->textBox8->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(100, 25);
+			this->textBox8->Size = System::Drawing::Size(132, 29);
 			this->textBox8->TabIndex = 11;
 			// 
 			// button7
 			// 
-			this->button7->Location = System::Drawing::Point(72, 293);
-			this->button7->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button7->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button7.BackgroundImage")));
+			this->button7->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->button7->FlatAppearance->BorderColor = System::Drawing::Color::Maroon;
+			this->button7->FlatAppearance->BorderSize = 2;
+			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button7->Location = System::Drawing::Point(548, 155);
+			this->button7->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(85, 25);
+			this->button7->Size = System::Drawing::Size(80, 35);
 			this->button7->TabIndex = 8;
 			this->button7->Text = L"归还";
 			this->button7->UseVisualStyleBackColor = true;
@@ -156,93 +178,137 @@ namespace LMS {
 			// 
 			// textBox9
 			// 
-			this->textBox9->Location = System::Drawing::Point(120, 187);
-			this->textBox9->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox9->Font = (gcnew System::Drawing::Font(L"华文新魏", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->textBox9->Location = System::Drawing::Point(151, 159);
+			this->textBox9->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox9->Name = L"textBox9";
-			this->textBox9->Size = System::Drawing::Size(100, 25);
+			this->textBox9->Size = System::Drawing::Size(334, 29);
 			this->textBox9->TabIndex = 7;
 			// 
 			// textBox10
 			// 
-			this->textBox10->Location = System::Drawing::Point(120, 138);
-			this->textBox10->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox10->Font = (gcnew System::Drawing::Font(L"华文新魏", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->textBox10->Location = System::Drawing::Point(406, 101);
+			this->textBox10->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox10->Name = L"textBox10";
-			this->textBox10->Size = System::Drawing::Size(100, 25);
+			this->textBox10->Size = System::Drawing::Size(222, 29);
 			this->textBox10->TabIndex = 6;
 			// 
 			// textBox11
 			// 
-			this->textBox11->Location = System::Drawing::Point(120, 92);
-			this->textBox11->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox11->Font = (gcnew System::Drawing::Font(L"华文新魏", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->textBox11->Location = System::Drawing::Point(129, 101);
+			this->textBox11->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox11->Name = L"textBox11";
-			this->textBox11->Size = System::Drawing::Size(100, 25);
+			this->textBox11->Size = System::Drawing::Size(187, 29);
 			this->textBox11->TabIndex = 5;
 			// 
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(27, 197);
+			this->label9->BackColor = System::Drawing::Color::Transparent;
+			this->label9->Font = (gcnew System::Drawing::Font(L"华文新魏", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->label9->Location = System::Drawing::Point(71, 162);
+			this->label9->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(52, 15);
+			this->label9->Size = System::Drawing::Size(76, 21);
 			this->label9->TabIndex = 3;
 			this->label9->Text = L"出版社";
 			// 
 			// label10
 			// 
 			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(27, 148);
+			this->label10->BackColor = System::Drawing::Color::Transparent;
+			this->label10->Font = (gcnew System::Drawing::Font(L"华文新魏", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->label10->Location = System::Drawing::Point(348, 104);
+			this->label10->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(37, 15);
+			this->label10->Size = System::Drawing::Size(54, 21);
 			this->label10->TabIndex = 2;
 			this->label10->Text = L"作者";
 			// 
 			// label11
 			// 
 			this->label11->AutoSize = true;
-			this->label11->Location = System::Drawing::Point(27, 92);
+			this->label11->BackColor = System::Drawing::Color::Transparent;
+			this->label11->Font = (gcnew System::Drawing::Font(L"华文新魏", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->label11->Location = System::Drawing::Point(71, 104);
+			this->label11->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(37, 15);
+			this->label11->Size = System::Drawing::Size(54, 21);
 			this->label11->TabIndex = 1;
 			this->label11->Text = L"书名";
 			// 
 			// label12
 			// 
 			this->label12->AutoSize = true;
-			this->label12->Location = System::Drawing::Point(27, 39);
+			this->label12->BackColor = System::Drawing::Color::Transparent;
+			this->label12->Font = (gcnew System::Drawing::Font(L"华文新魏", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->label12->Location = System::Drawing::Point(71, 46);
+			this->label12->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(23, 15);
+			this->label12->Size = System::Drawing::Size(33, 21);
 			this->label12->TabIndex = 0;
 			this->label12->Text = L"ID";
 			// 
 			// comboBox1
 			// 
+			this->comboBox1->Font = (gcnew System::Drawing::Font(L"华文新魏", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(513, 99);
+			this->comboBox1->Location = System::Drawing::Point(163, 71);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(121, 23);
+			this->comboBox1->Size = System::Drawing::Size(201, 29);
 			this->comboBox1->TabIndex = 14;
 			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MessageForm::comboBox1_SelectedIndexChanged);
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(412, 106);
+			this->label2->BackColor = System::Drawing::Color::Transparent;
+			this->label2->Font = (gcnew System::Drawing::Font(L"华文新魏", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->label2->Location = System::Drawing::Point(50, 71);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(52, 15);
+			this->label2->Size = System::Drawing::Size(87, 25);
 			this->label2->TabIndex = 15;
 			this->label2->Text = L"图书馆";
 			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->BackColor = System::Drawing::Color::Transparent;
+			this->label3->Font = (gcnew System::Drawing::Font(L"华文行楷", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->label3->Location = System::Drawing::Point(231, 9);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(316, 51);
+			this->label3->TabIndex = 16;
+			this->label3->Text = L"用户信息管理";
+			// 
 			// MessageForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1195, 652);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->ClientSize = System::Drawing::Size(841, 572);
+			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->dataGridView1);
-			this->Margin = System::Windows::Forms::Padding(4);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MessageForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->Text = L"用户信息";
 			this->Load += gcnew System::EventHandler(this, &MessageForm::MessageForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
