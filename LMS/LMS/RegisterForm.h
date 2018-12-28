@@ -411,6 +411,7 @@ private: System::Void button4_Click(System::Object^  sender, System::EventArgs^ 
 				strCmd2 = "INSERT INTO 用户([用户名],[帐号],[密码],[用户身份]) VALUES( '"+textBox3->Text+"','"+textBox1->Text+"','"+textBox2->Text+"','"+identity+"' )";
 				OleDbCommand^ comm2 = gcnew OleDbCommand(strCmd2, con1); comm2->ExecuteNonQuery();
 				con1->Close();
+				strLogon += L"注册失败\r\n";
 			}
 					
 

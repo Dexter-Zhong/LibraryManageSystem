@@ -383,7 +383,9 @@ namespace LMS {
 			DataTable^ table1 = dataSet->Tables[strTableName];
 			if (table1->Rows->Count == 0)
 			{
-				strLogon += L"登录失败，该用户不存在\r\n"; con1->Close();
+				strLogon += L"登录失败，该用户不存在\r\n"; 
+				MessageBox::Show(strLogon);
+				con1->Close();
 			}
 			else{
 				for each (DataRow^ row in table1->Rows)
