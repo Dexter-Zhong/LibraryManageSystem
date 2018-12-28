@@ -67,7 +67,11 @@ namespace LMS {
 	private: System::Windows::Forms::ToolStripMenuItem^  退出ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStrip^  toolStrip1;
 	private: System::Windows::Forms::ToolStripButton^  toolStripButton1;
-	private: System::Windows::Forms::ToolStripButton^  toolStripButton2;
+
+
+
+
+
 	private: System::Windows::Forms::ToolStripButton^  toolStripButton3;
 	private: System::Windows::Forms::ToolStripButton^  toolStripButton4;
 	private: System::Windows::Forms::ToolStripButton^  toolStripButton5;
@@ -131,6 +135,9 @@ private: System::Windows::Forms::Label^  label15;
 private: System::Windows::Forms::PictureBox^  pictureBox1;
 private: System::Windows::Forms::GroupBox^  groupBox3;
 private: System::Windows::Forms::GroupBox^  groupBox4;
+private: System::Windows::Forms::ToolStripButton^  toolStripButton6;
+private: System::Windows::Forms::ToolStripButton^  toolStripButton7;
+private: System::Windows::Forms::ToolStripButton^  toolStripButton8;
 
 	private: System::ComponentModel::IContainer^  components;
 
@@ -172,10 +179,12 @@ private: System::Windows::Forms::GroupBox^  groupBox4;
 			this->退出ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->toolStrip1 = (gcnew System::Windows::Forms::ToolStrip());
 			this->toolStripButton1 = (gcnew System::Windows::Forms::ToolStripButton());
-			this->toolStripButton2 = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripButton3 = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripButton4 = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripButton5 = (gcnew System::Windows::Forms::ToolStripButton());
+			this->toolStripButton6 = (gcnew System::Windows::Forms::ToolStripButton());
+			this->toolStripButton7 = (gcnew System::Windows::Forms::ToolStripButton());
+			this->toolStripButton8 = (gcnew System::Windows::Forms::ToolStripButton());
 			this->statusStrip1 = (gcnew System::Windows::Forms::StatusStrip());
 			this->toolStripStatusLabel1 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
 			this->toolStripStatusLabel2 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
@@ -461,9 +470,9 @@ private: System::Windows::Forms::GroupBox^  groupBox4;
 			// 
 			this->toolStrip1->BackColor = System::Drawing::Color::Wheat;
 			this->toolStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
-			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
+			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(7) {
 				this->toolStripButton1,
-					this->toolStripButton2, this->toolStripButton3, this->toolStripButton4, this->toolStripButton5
+					this->toolStripButton3, this->toolStripButton4, this->toolStripButton5, this->toolStripButton6, this->toolStripButton7, this->toolStripButton8
 			});
 			this->toolStrip1->Location = System::Drawing::Point(0, 35);
 			this->toolStrip1->Name = L"toolStrip1";
@@ -478,16 +487,8 @@ private: System::Windows::Forms::GroupBox^  groupBox4;
 			this->toolStripButton1->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->toolStripButton1->Name = L"toolStripButton1";
 			this->toolStripButton1->Size = System::Drawing::Size(24, 24);
-			this->toolStripButton1->Text = L"toolStripButton1";
-			// 
-			// toolStripButton2
-			// 
-			this->toolStripButton2->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
-			this->toolStripButton2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButton2.Image")));
-			this->toolStripButton2->ImageTransparentColor = System::Drawing::Color::Magenta;
-			this->toolStripButton2->Name = L"toolStripButton2";
-			this->toolStripButton2->Size = System::Drawing::Size(24, 24);
-			this->toolStripButton2->Text = L"toolStripButton2";
+			this->toolStripButton1->Text = L"打开文件";
+			this->toolStripButton1->Click += gcnew System::EventHandler(this, &Form1::toolStripButton1_Click);
 			// 
 			// toolStripButton3
 			// 
@@ -496,7 +497,8 @@ private: System::Windows::Forms::GroupBox^  groupBox4;
 			this->toolStripButton3->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->toolStripButton3->Name = L"toolStripButton3";
 			this->toolStripButton3->Size = System::Drawing::Size(24, 24);
-			this->toolStripButton3->Text = L"toolStripButton3";
+			this->toolStripButton3->Text = L"打印";
+			this->toolStripButton3->Click += gcnew System::EventHandler(this, &Form1::toolStripButton3_Click);
 			// 
 			// toolStripButton4
 			// 
@@ -505,7 +507,8 @@ private: System::Windows::Forms::GroupBox^  groupBox4;
 			this->toolStripButton4->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->toolStripButton4->Name = L"toolStripButton4";
 			this->toolStripButton4->Size = System::Drawing::Size(24, 24);
-			this->toolStripButton4->Text = L"toolStripButton4";
+			this->toolStripButton4->Text = L"关闭文件";
+			this->toolStripButton4->Click += gcnew System::EventHandler(this, &Form1::toolStripButton4_Click);
 			// 
 			// toolStripButton5
 			// 
@@ -514,7 +517,39 @@ private: System::Windows::Forms::GroupBox^  groupBox4;
 			this->toolStripButton5->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->toolStripButton5->Name = L"toolStripButton5";
 			this->toolStripButton5->Size = System::Drawing::Size(24, 24);
-			this->toolStripButton5->Text = L"toolStripButton5";
+			this->toolStripButton5->Text = L"串口设置";
+			this->toolStripButton5->Click += gcnew System::EventHandler(this, &Form1::toolStripButton5_Click);
+			// 
+			// toolStripButton6
+			// 
+			this->toolStripButton6->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->toolStripButton6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButton6.Image")));
+			this->toolStripButton6->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->toolStripButton6->Name = L"toolStripButton6";
+			this->toolStripButton6->Size = System::Drawing::Size(24, 24);
+			this->toolStripButton6->Text = L"关于";
+			this->toolStripButton6->Click += gcnew System::EventHandler(this, &Form1::toolStripButton6_Click);
+			// 
+			// toolStripButton7
+			// 
+			this->toolStripButton7->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->toolStripButton7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButton7.Image")));
+			this->toolStripButton7->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->toolStripButton7->Name = L"toolStripButton7";
+			this->toolStripButton7->Size = System::Drawing::Size(24, 24);
+			this->toolStripButton7->Text = L"帮助";
+			this->toolStripButton7->Click += gcnew System::EventHandler(this, &Form1::toolStripButton7_Click);
+			// 
+			// toolStripButton8
+			// 
+			this->toolStripButton8->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->toolStripButton8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButton8.Image")));
+			this->toolStripButton8->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->toolStripButton8->Name = L"toolStripButton8";
+			this->toolStripButton8->Size = System::Drawing::Size(24, 24);
+			this->toolStripButton8->Text = L"退出";
+			this->toolStripButton8->Click += gcnew System::EventHandler(this, &Form1::toolStripButton8_Click);
+			this->toolStripButton8->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Form1::toolStripButton8_MouseMove);
 			// 
 			// statusStrip1
 			// 
@@ -1805,6 +1840,13 @@ private: System::Void button7_Click(System::Object^  sender, System::EventArgs^ 
 
 				 this->con1->Close();
 
+				 String^ message = L"IsBorrow:yes";
+
+				 if (dlg->com->IsOpen)
+					 dlg->com->Write(message);
+				 else
+					 MessageBox::Show(L"串口未打开");
+
 			 }
 
 			 catch (Data::OleDb::OleDbException^ e)
@@ -1984,6 +2026,102 @@ private: System::Void 关于ToolStripMenuItem_Click(System::Object^  sender, Syste
 	pDlg->ShowDialog();
 }
 private: System::Void label13_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void toolStripButton6_Click(System::Object^  sender, System::EventArgs^  e) {
+	AboutForm^pDlg = gcnew AboutForm();
+	pDlg->ShowDialog();
+}
+private: System::Void toolStripButton7_Click(System::Object^  sender, System::EventArgs^  e) {
+	HelpForm^pDlg = gcnew HelpForm();
+	pDlg->ShowDialog();
+}
+private: System::Void toolStripButton8_Click(System::Object^  sender, System::EventArgs^  e) {
+	this->Close();
+}
+private: System::Void toolStripButton8_MouseMove(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
+	String ^str = "X=" + e->X.ToString() + ",Y=" + e->Y.ToString();
+	this->toolStripStatusLabel3->Text = str;
+}
+private: System::Void toolStripButton5_Click(System::Object^  sender, System::EventArgs^  e) {
+	dlg->com->Close();
+	GetComList_Reg(dlg->comboBox4);
+	dlg->ShowDialog();
+}
+private: System::Void toolStripButton4_Click(System::Object^  sender, System::EventArgs^  e) {
+	this->dataGridView1->DataSource = nullptr;
+	this->我的ToolStripMenuItem->Enabled = false;
+	this->打开串口ToolStripMenuItem->Enabled = false;
+	this->comboBox1->Items->Clear();
+	this->comboBox1->Text = "";
+	this->打印ToolStripMenuItem->Enabled = false;
+	this->打印预览ToolStripMenuItem->Enabled = false;
+}
+private: System::Void toolStripButton3_Click(System::Object^  sender, System::EventArgs^  e) {
+	PrintDialog^ printDlg = gcnew PrintDialog();   		// 打印对话框
+
+	printDlg->Document = this->printDocument1;      	// 设置打印文档
+
+	if (printDlg->ShowDialog() == System::Windows::Forms::DialogResult::OK)
+
+		this->printDocument1->Print();             	 // 开始打印
+}
+private: System::Void toolStripButton1_Click(System::Object^  sender, System::EventArgs^  e) {
+	OpenFileDialog^  pOFD = gcnew OpenFileDialog();
+
+	pOFD->Filter = "Access文件(*.mdb)|*.mdb";
+
+	pOFD->DefaultExt = "mdb";
+
+	if (pOFD->ShowDialog() != System::Windows::Forms::DialogResult::OK) return;
+
+	Connection::strConn = String::Format(
+
+		"Provider=Microsoft.Jet.OLEDB.4.0; Data Source={0}", pOFD->FileName);
+	IsFileOpen = 1;
+
+	//this->我的ToolStripMenuItem->Enabled = true;
+
+	this->打开串口ToolStripMenuItem->Enabled = true;
+	this->打印ToolStripMenuItem->Enabled = true;
+	this->打印预览ToolStripMenuItem->Enabled = true;
+
+	con1 = gcnew OleDbConnection(Connection::strConn);
+
+	OleDbConnection^ con1 = gcnew OleDbConnection(Connection::strConn);
+
+	con1->Open();		// 打开连接
+
+	// 清空组合框的列表项
+
+	this->comboBox1->Items->Clear();
+
+	// 获取数据表名称，并填充到toolStripComboBox1中
+
+	// 指定限制列，用于GetOleDbSchemaTable中,返回第四列为table表
+
+	array<String^>^ strs = gcnew array<String^>{ nullptr, nullptr, nullptr, "TABLE" };
+
+	DataTable^ table = con1->GetOleDbSchemaTable(
+
+		OleDbSchemaGuid::Tables, strs);		// 获取数据表名
+
+	if (table->Rows->Count > 0)
+
+	{
+
+		for each (DataRow^ row in table->Rows)
+
+		{
+			if ((String^)row["TABLE_NAME"] != "用户")
+				this->comboBox1->Items->Add(row["TABLE_NAME"]);
+
+		}
+
+		this->comboBox1->SelectedIndex = 0;
+
+	}
+
+	con1->Close();
 }
 };
 }

@@ -1,47 +1,25 @@
-﻿生成启动时间为 2018/12/27 15:45:44。
+﻿生成启动时间为 2018/12/28 21:27:58。
      1>项目“C:\Users\99713\Documents\GitHub\LibraryManageSystem\LMS\LMS\LMS.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\LMS.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib stdafx.cpp
-         stdafx.cpp
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\LMS.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib AboutForm.cpp AddManageForm.cpp AssemblyInfo.cpp HelpForm.cpp LMS.cpp LoginForm.cpp MessageForm.cpp RegisterForm.cpp SerialForm.cpp
-         AboutForm.cpp
-         AddManageForm.cpp
-         AssemblyInfo.cpp
-     1>AssemblyInfo.cpp(40): warning C4947: “RequestMinimum”: 标记为已过时
-                 消息: “Assembly level declarative security is obsolete and is no longer enforced by the CLR by default. See http://go.microsoft.com/fwlink/?LinkID=155570 for more information.”
-         HelpForm.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\LMS.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib LMS.cpp
          LMS.cpp
      1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\LoginForm.h(354): warning C4101: “strCmd2”: 未引用的局部变量
      1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\LoginForm.h(354): warning C4101: “identity”: 未引用的局部变量
      1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\SerialForm.h(271): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
-     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\MessageForm.h(365): warning C4101: “e”: 未引用的局部变量
-     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\MessageForm.h(412): warning C4101: “e”: 未引用的局部变量
-     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1874): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1887): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1891): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1895): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1899): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1903): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1920): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1924): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1928): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1932): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1936): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-         LoginForm.cpp
-     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\LoginForm.h(354): warning C4101: “strCmd2”: 未引用的局部变量
-     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\LoginForm.h(354): warning C4101: “identity”: 未引用的局部变量
-         MessageForm.cpp
-     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\LoginForm.h(354): warning C4101: “strCmd2”: 未引用的局部变量
-     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\LoginForm.h(354): warning C4101: “identity”: 未引用的局部变量
-     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\MessageForm.h(365): warning C4101: “e”: 未引用的局部变量
-     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\MessageForm.h(412): warning C4101: “e”: 未引用的局部变量
-         RegisterForm.cpp
-         SerialForm.cpp
-     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\SerialForm.h(271): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
-         正在生成代码...
-     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\form1.h(1550): warning C4715: “LMS::Form1::CheckValid”: 不是所有的控件路径都返回值
-       ResourceCompile:
-         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"Debug\app.res" app.rc 
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\MessageForm.h(366): warning C4101: “e”: 未引用的局部变量
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\MessageForm.h(413): warning C4101: “e”: 未引用的局部变量
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1916): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1929): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1933): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1937): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1941): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1945): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1962): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1966): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1970): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1974): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\Form1.h(1978): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\99713\documents\github\librarymanagesystem\lms\lms\form1.h(1585): warning C4715: “LMS::Form1::CheckValid”: 不是所有的控件路径都返回值
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\99713\Documents\GitHub\LibraryManageSystem\LMS\Debug\LMS.exe" /INCREMENTAL /NOLOGO user32.lib kernel32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /ASSEMBLYRESOURCE:Debug\LMS.AboutForm.resources /ASSEMBLYRESOURCE:Debug\LMS.AddManageForm.resources /ASSEMBLYRESOURCE:Debug\LMS.Form1.resources /ASSEMBLYRESOURCE:Debug\LMS.HelpForm.resources /ASSEMBLYRESOURCE:Debug\LMS.LoginForm.resources /ASSEMBLYRESOURCE:Debug\LMS.MessageForm.resources /ASSEMBLYRESOURCE:Debug\LMS.RegisterForm.resources /ASSEMBLYRESOURCE:Debug\LMS.SerialForm.resources /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\99713\Documents\GitHub\LibraryManageSystem\LMS\Debug\LMS.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
          Debug\AboutForm.obj
@@ -60,4 +38,4 @@
 
 生成成功。
 
-已用时间 00:00:06.73
+已用时间 00:00:04.57

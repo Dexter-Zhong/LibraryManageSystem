@@ -1,6 +1,7 @@
 #pragma once
 #include "LoginForm.h"
 #include"Connection.h"
+#include "SerialForm.h"
 namespace LMS {
 
 	using namespace System;
@@ -414,7 +415,7 @@ private: System::Void comboBox1_SelectedIndexChanged(System::Object^  sender, Sy
 	};
 }
 
-
+		 SerialForm^dlg = gcnew SerialForm;
 private: System::Void button7_Click(System::Object^  sender, System::EventArgs^  e) {
 
 	DataGridViewRow^ curRow = this->dataGridView1->CurrentRow;
@@ -467,6 +468,13 @@ private: System::Void button7_Click(System::Object^  sender, System::EventArgs^ 
 		cmd1->ExecuteNonQuery();
 
 		this->con1->Close();
+
+		String^ message = L"IsBorrow:No";
+
+		if (dlg->com->IsOpen)
+			dlg->com->Write(message);
+		else
+			MessageBox::Show(L"´®¿ÚÎ´´ò¿ª");
 
 	}
 
